@@ -30,7 +30,6 @@
     reply: '<svg viewBox="0 0 24 24"><path d="M10 6.5L4.5 12 10 17.5M5 12h9a6 6 0 0 1 6 6"/></svg>',
   };
   const bars = (n, seed) => { let x = seed, o = ''; for (let i = 0; i < n; i++) { x = (x * 9301 + 49297) % 233280; o += `<i style="height:${4 + Math.round((x / 233280) * 20)}px"></i>`; } return o; };
-  const MAP = `<svg viewBox="0 0 260 112" preserveAspectRatio="xMidYMid slice"><rect width="260" height="112" class="mp-bg"/><path d="M-10 78 L270 40 M60 -10 L104 122 M150 -10 L190 122 M-10 22 L270 96" class="mp-rd"/><path d="M-10 60 L270 60" class="mp-rd big"/><rect x="18" y="8" width="38" height="22" rx="3" class="mp-bk"/><rect x="200" y="74" width="44" height="26" rx="3" class="mp-bk"/><rect x="118" y="80" width="26" height="18" rx="3" class="mp-pk"/><g transform="translate(130 56)"><path d="M0 0c-6-8-10-13-10-18a10 10 0 0 1 20 0c0 5-4 10-10 18z" class="mp-pin"/><circle cy="-18" r="3.6" fill="#fff"/></g></svg>`;
   const CHAIR = `<svg viewBox="0 0 230 150"><rect width="230" height="150" class="ph-bg"/><rect x="0" y="112" width="230" height="38" class="ph-fl"/><path d="M78 30h56v54H78z" class="ph-ch"/><path d="M70 84h76v10H70z" class="ph-ch"/><path d="M76 94v34M140 94v34M88 94v16" class="ph-lg"/><path d="M96 124l14-6" class="ph-lg"/><path d="M128 94l-6 10 8 6-6 12" class="ph-ck"/><circle cx="186" cy="38" r="14" class="ph-lamp"/></svg>`;
 
   /* ---------- the three scenarios (Cantonese chat, English panel) ---------- */
@@ -52,11 +51,9 @@
         ['out', '收到！貨物長唔長過6呎？', ['6呎或以下', '長過6呎']],
         ['tap', 0],
         ['f', 4, '幾箱 · 6呎或以下', 'fx', 'Asked'],
-        ['out', '請send起點位置📍，再講埋去邊同使唔使跟車。'],
-        ['loc', '鴻圖道', '觀塘'],
-        ['f', 2, '觀塘鴻圖道', 'ai'],
-        ['in', '去中環皇后大道中，唔使跟車'],
-        ['f', 3, '中環皇后大道中', 'ai'], ['f', 5, '唔使', 'ai'],
+        ['out', '請講埋起點同終點嘅地址，同埋使唔使跟車？'],
+        ['in', '由觀塘鴻圖道去中環皇后大道中，唔使跟車'],
+        ['f', 2, '觀塘鴻圖道', 'ai'], ['f', 3, '中環皇后大道中', 'ai'], ['f', 5, '唔使', 'ai'],
         ['log', 'check', 'All required details in', 'Booking flow · fixed by us', 'fx'],
         ['st', 3],
         ['log', 'coins', 'GetQuote → $158', 'Our pricing system', 'sy'],
@@ -70,35 +67,6 @@
         ['sys', '配對司機中…'],
         ['log', 'van', 'Driver matched · 15s', 'Our matching', 'sy'],
         ['drv', '搵到司機喇！', '陳師傅', 'XY 2468', '15'],
-        ['wait', 2.6],
-      ],
-    },
-    {
-      intent: 'Where is my driver · 查單', heardIc: 'chat',
-      stages: [['Understand', '理解', 'ai'], ['Find', '搵單', 'sy'], ['Offer', '建議', 'fx'], ['Rush', '加急', 'hu'], ['Driver', '配對', 'sy']],
-      fields: [['Order', '訂單'], ['Route', '路線'], ['Status', '狀態'], ['Waiting', '等咗'], ['Offer', '建議'], ['Driver', '司機']],
-      script: [
-        ['st', 0],
-        ['in', '點解仲未有司機㗎？'],
-        ['heard', '點解仲未有司機㗎？'],
-        ['intent'],
-        ['log', 'spark', 'Wants: where is my driver', 'AI picks the status flow', 'ai'],
-        ['st', 1],
-        ['log', 'search', 'Find order by WhatsApp number', 'Our order system', 'sy'],
-        ['f', 0, '#GX-8790', 'sy'], ['f', 1, '荃灣 → 旺角', 'sy'], ['f', 2, '配對中', 'sy'], ['f', 3, '6分鐘', 'sy'],
-        ['st', 2],
-        ['log', 'sliders', 'No driver yet → offer rush fee', 'Status flow · fixed by us', 'fx'],
-        ['f', 4, '加急 +$20', 'fx', 'Rule'],
-        ['out', '搵到你張單：荃灣去旺角，等咗6分鐘。加$20加急費會快啲有司機，要唔要加？', ['加$20加急', '繼續等']],
-        ['st', 3],
-        ['tap', 0],
-        ['log', 'coins', 'Rush fee +$20 added', 'Customer chose it', 'hu'],
-        ['sys', '已加急 +$20'],
-        ['log', 'loop', 'Re-sent to nearby drivers', 'Our matching', 'sy'],
-        ['st', 4],
-        ['log', 'van', 'Driver matched · 40s', 'Our matching', 'sy'],
-        ['f', 5, '李師傅 · 12分鐘到', 'sy'],
-        ['drv', '司機已接單 ✅', '李師傅', 'XY 1357', '12'],
         ['wait', 2.6],
       ],
     },
@@ -249,7 +217,6 @@
         later(el, .65, echo);
         break;
       }
-      case 'loc': addMsg(el, node(`<div class="wa-m in"><div class="wa-b wa-loc"><div class="wa-map">${MAP}</div><b>${ic('pin')}${a[1]}</b><span>${a[2]} · 位置</span><span class="wa-t">${stamp()}${W.tick}</span></div></div>`), anim); break;
       case 'photo': addMsg(el, node(`<div class="wa-m in"><div class="wa-b wa-photo">${CHAIR}<span class="wa-t">${stamp()}${W.tick}</span></div></div>`), anim); break;
       case 'card': withTyping(el, anim, .9, () => addMsg(el, node(`<div class="wa-m out"><div class="wa-b wa-card">
           <div class="wa-ch">${ic('doc')}訂單摘要</div>
@@ -357,66 +324,55 @@
   /* =====================================================================
      Flow map
      ===================================================================== */
-  const R = [404, 504, 604];
+  const R = [440, 504, 568];
   const NODES = [
-    { id: 'in0', k: 'in', x: 120, y: 360, w: 210, h: 56, ic: 'chat', t: 'Text', z: '文字' },
-    { id: 'in1', k: 'in', x: 120, y: 428, w: 210, h: 56, ic: 'mic', t: 'Voice note', z: '語音' },
-    { id: 'in2', k: 'in', x: 120, y: 496, w: 210, h: 56, ic: 'pin', t: 'Location', z: '位置' },
-    { id: 'in3', k: 'in', x: 120, y: 564, w: 210, h: 56, ic: 'eye', t: 'Photo', z: '相片' },
+    { id: 'in0', k: 'in', x: 120, y: 384, w: 210, h: 56, ic: 'chat', t: 'Text', z: '文字' },
+    { id: 'in1', k: 'in', x: 120, y: 476, w: 210, h: 56, ic: 'mic', t: 'Voice note', z: '語音' },
+    { id: 'in3', k: 'in', x: 120, y: 568, w: 210, h: 56, ic: 'eye', t: 'Photo', z: '相片' },
     { id: 'ai', k: 'ai', x: 400, y: 362, w: 260, h: 284, big: true, ic: 'spark', t: 'AI understands', z: '理解', chips: ['What they want', 'The details', 'Voice → text'] },
     { id: 'f0', k: 'fx', x: 740, y: R[0] - 32, w: 230, h: 64, ic: 'van', t: 'Book a van', z: '叫車' },
-    { id: 'f1', k: 'fx', x: 740, y: R[1] - 32, w: 230, h: 64, ic: 'clock', t: 'Status · rush', z: '查單 · 加急' },
     { id: 'f2', k: 'fx', x: 740, y: R[2] - 32, w: 230, h: 64, ic: 'x', t: 'Cancel · change', z: '取消 · 改單' },
     { id: 's0', k: 'sy', x: 1040, y: R[0] - 32, w: 230, h: 64, ic: 'coins', t: 'GetQuote', z: '報價' },
-    { id: 's1', k: 'sy', x: 1040, y: R[1] - 32, w: 230, h: 64, ic: 'search', t: 'Find the order', z: '搵單' },
     { id: 's2', k: 'sy', x: 1040, y: R[2] - 32, w: 230, h: 64, ic: 'search', t: 'Find the order', z: '搵單' },
     { id: 'c0', k: 'hu', x: 1330, y: R[0] - 32, w: 220, h: 64, ic: 'person-check', t: 'Taps confirm', z: '確認落單' },
-    { id: 'c1', k: 'hu', x: 1330, y: R[1] - 32, w: 220, h: 64, ic: 'coins', t: 'Adds rush fee', z: '加急費' },
     { id: 'c2', k: 'hu', x: 1330, y: R[2] - 32, w: 220, h: 64, ic: 'person-check', t: 'Taps confirm', z: '確認取消' },
     { id: 'r0', k: 'sy', x: 1600, y: R[0] - 32, w: 200, h: 64, ic: 'van', t: 'Order placed', z: '落單 · 配對' },
-    { id: 'r1', k: 'sy', x: 1600, y: R[1] - 32, w: 200, h: 64, ic: 'van', t: 'Driver found', z: '有司機' },
     { id: 'r2', k: 'sy', x: 1600, y: R[2] - 32, w: 200, h: 64, ic: 'check', t: 'Cancelled', z: '已取消' },
     { id: 'hp', k: 'hu', x: 740, y: 690, w: 530, h: 124, big: true, ic: 'headset', t: 'A person · Chatwoot', z: '轉人工', chips: ['Complaints', 'Refunds', 'Bot unsure'] },
     { id: 'qr', k: 'ai', x: 1330, y: 690, w: 470, h: 124, big: true, ic: 'chart', t: 'Daily quality report', z: '每日評分', chips: ['Order placed', 'To a person', 'Silent drop', 'Abandoned'] },
   ];
   const CAPS = [['Message', 120, 210], ['AI decides', 400, 260], ['Fixed flow', 740, 230], ['Our systems', 1040, 230], ['Customer', 1330, 220], ['Result', 1600, 200]];
   const POP = {
-    in0: ['Customer', 'Customers write the way they talk, in Cantonese, English or both.', '「點解仲未有司機㗎？」'],
+    in0: ['Customer', 'Customers write the way they talk, in Cantonese, English or both. Addresses come in as text.', '「由觀塘鴻圖道去中環，唔使跟車」'],
     in1: ['Customer', 'Many customers just send a voice note. The AI turns it into text first.', '「而家要架客貨車，觀塘去中環」'],
-    in2: ['Customer', 'A location pin is the fastest way to give a pickup point.', '📍 觀塘 鴻圖道'],
     in3: ['Customer', 'Photos come with problems: damage, the wrong address, the cargo.', '📷 櫈腳斷咗'],
     ai: ['AI decides', 'Works out what the customer wants and pulls out the details. That is all it decides.', '叫車 · 觀塘 → 中環 · 客貨車'],
     f0: ['Fixed by us', 'Designed steps: ask for anything missing, quote, show the summary, then place the order.', '必問：貨物長度 · 地址 · 跟車'],
-    f1: ['Fixed by us', 'Finds the order. If there is no driver yet, a fixed rule offers the rush fee.', '「加$20加急費？」'],
     f2: ['Fixed by us', 'Finds the order, explains the rule, asks the customer to confirm.', '「確認取消？」'],
     s0: ['Our systems', 'Every price comes from our pricing system. The AI never makes up a number.', 'GetQuote → $158'],
-    s1: ['Our systems', 'Finds the order from the customer’s WhatsApp number.', '#GX-8790 · 配對中'],
     s2: ['Our systems', 'Finds the order from the customer’s WhatsApp number.', '#GX-8790'],
     c0: ['Customer decides', 'Nothing is placed until the customer taps confirm on the full summary.', '[ 確認落單 ]'],
-    c1: ['Customer decides', 'The customer chooses to pay the rush fee, or keeps waiting.', '[ 加$20加急 ]'],
     c2: ['Customer decides', 'The customer confirms the cancel.', '[ 確認取消 ]'],
-    r0: ['Our systems', 'SubmitOrder places the order, matching finds a driver, then a tracking link.', '#GX-8841 · 15s'],
-    r1: ['Our systems', 'The order goes back out to nearby drivers with the rush fee.', '司機已接單 ✅'],
+    r0: ['Our systems', 'SubmitOrder places the order and matching finds a driver.', '#GX-8841 · 15s'],
     r2: ['Our systems', 'The order is cancelled and the customer gets a confirmation.', '已取消'],
     hp: ['A person decides', 'Complaints, refunds, compensation, or the bot is unsure: the chat goes to our CS team in Chatwoot with the history and order. The bot stops.', '投訴 · #GX-8712 · 📷'],
     qr: ['Every chat', 'Every conversation is scored: outcome, where it dropped off, why, and sentiment. The weak spots become the next fixes.', '→ the fix loop, next'],
   };
   const ROUTES = [
     { path: ['in1', 'e-in1', 'ai', 'e-af0', 'f0', 'e-fs0', 's0', 'e-sc0', 'c0', 'e-cr0', 'r0'], out: 0, msg: ['mic', '而家要架客貨車，觀塘去中環，有幾箱嘢。'], read: '叫車 · 觀塘 → 中環' },
-    { path: ['in0', 'e-in0', 'ai', 'e-af1', 'f1', 'e-fs1', 's1', 'e-sc1', 'c1', 'e-cr1', 'r1'], out: 0, msg: ['chat', '點解仲未有司機㗎？'], read: '查單 · 搵司機' },
     { path: ['in3', 'e-in3', 'ai', 'e-ahp', 'hp', 'e-hq', 'qr'], out: 1, msg: ['eye', '司機遲咗40分鐘，仲整爛咗我張櫈！'], read: '投訴 · 損壞 · 好嬲' },
   ];
   function edgesD() {
     const E = {};
-    for (let k = 0; k < 4; k++) { const y = 388 + k * 68, y2 = 452 + k * 34; E['e-in' + k] = `M330 ${y} C366 ${y} 364 ${y2} 400 ${y2}`; }
-    for (let k = 0; k < 3; k++) {
-      const y1 = 468 + k * 36, y = R[k];
+    [['in0', 412], ['in1', 504], ['in3', 596]].forEach(([id, y], k) => { const y2 = 470 + k * 34; E['e-' + id] = `M330 ${y} C366 ${y} 364 ${y2} 400 ${y2}`; });
+    [[0, 0], [2, 2]].forEach(([k, r]) => {
+      const y1 = 486 + (k / 2) * 36, y = R[r];
       E['e-af' + k] = `M660 ${y1} C702 ${y1} 698 ${y} 740 ${y}`;
       E['e-fs' + k] = `M970 ${y} H1040`; E['e-sc' + k] = `M1270 ${y} H1330`; E['e-cr' + k] = `M1550 ${y} H1600`;
-    }
+    });
     E['e-ahp'] = 'M530 646 V722 Q530 752 560 752 H740';
     E['e-hq'] = 'M1270 752 H1330';
-    E['e-rq'] = 'M1700 636 V690';
+    E['e-rq'] = 'M1700 600 V690';
     return E;
   }
   const kindOf = id => (NODES.find(n => n.id === id) || {}).k;
