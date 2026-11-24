@@ -333,6 +333,8 @@
     rise(tl, $$(el, '.wp-s'), .65, { y: 16, stagger: .06 });
     rise(tl, $$(el, '.wp-card'), .8, { y: 40, stagger: .12 });
     rise(tl, $$(el, '.wp-rules > *'), 1.1, { y: 14, stagger: .07 });
+    tl.from($(el, '.wa-try'), { y: -20, opacity: 0, scale: .9, duration: .6, ease: BACK }, .9);
+    A.loop(() => gsap.fromTo($(el, '.wt-qr'), { boxShadow: '0 0 0 0 rgba(37,211,102,.55)' }, { boxShadow: '0 0 0 14px rgba(37,211,102,0)', duration: 1.6, repeat: -1, ease: 'power1.out' }), 0);
     A.onLeave(() => { el._live = false; waStop(el); });
     A.loop(() => { el._live = true; waRun(el, 0, 0, 1.1); return () => { el._live = false; waStop(el); }; }, 0);
   };
