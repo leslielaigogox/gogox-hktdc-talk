@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoGoX Product, Design and AI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22105%20-1%2029%2026%22%3E%3Crect%20x%3D%22105%22%20y%3D%22-1%22%20width%3D%2229%22%20height%3D%2226%22%20rx%3D%226%22%20fill%3D%22%2300121A%22/%3E%3Cpath%20fill%3D%22%23FFDD00%22%20d%3D%22M125.17%2C6.15c-1.23-1.23-.89-3.38.41-4.68h0a3%2C3%2C0%2C0%2C1%2C4.25%2C0h0a3%2C3%2C0%2C0%2C1%2C0%2C4.25h0C128.53%2C7%2C126.4%2C7.38%2C125.17%2C6.15Z%22/%3E%3Cpath%20fill%3D%22%23FFDD00%22%20d%3D%22M129.83%2C18.46%2C124%2C13.65a2.21%2C2.21%2C0%2C0%2C1-.16-3v0a2.33%2C2.33%2C0%2C0%2C0-.16-3.11h0a2.34%2C2.34%2C0%2C0%2C0-3.12-.17l0%2C0a2.22%2C2.22%2C0%2C0%2C1-3-.16l-4.81-5.79a3%2C3%2C0%2C0%2C0-4.24%2C4.25l5.79%2C4.8a2.22%2C2.22%2C0%2C0%2C1%2C0%2C3.13l-5.79%2C4.81a3%2C3%2C0%2C0%2C0%2C0%2C4.25h0a3%2C3%2C0%2C0%2C0%2C4.24%2C0l4.81-5.79a2.2%2C2.2%2C0%2C0%2C1%2C3.13%2C0l4.81%2C5.79a3%2C3%2C0%2C1%2C0%2C4.25-4.25Z%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<!-- ============ ICONS & GLYPHS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.8"/><path d="M16.2 14.1c3.1-.3 5.3 1.9 5.3 5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3.5 9.5 5 4h14l1.5 5.5"/><path d="M3.5 9.5a2.8 2.8 0 0 0 5.6 0 2.9 2.9 0 0 0 5.8 0 2.8 2.8 0 0 0 5.6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V4h11v17"/><path d="M15 9h5v12"/><path d="M7.5 8h4M7.5 12h4M7.5 16h4"/><path d="M2.5 21h19"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 14.5V21M9.6 11.2 3.4 9.6M14.4 11.2l6.2-1.6"/></symbol>
+    <symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 16.5V6h11v10.5"/><path d="M13.5 9.5h4.2l3.3 3.6v3.4h-1.6"/><path d="M8.6 16.5h6.8"/><circle cx="6.5" cy="17" r="2"/><circle cx="17.5" cy="17" r="2"/></symbol>
+    <symbol id="i-taxi" viewBox="0 0 24 24"><path d="M5 11l1.6-4.5h10.8L19 11"/><rect x="3.5" y="11" width="17" height="6" rx="1.5"/><path d="M6.5 17v2.5M17.5 17v2.5M10 6.5V4.5h4v2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M8 10h8M8 13h5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4.5L16.5 4l3.5 3.5L8.5 19z"/><path d="M14 6.5l3.5 3.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><rect x="8" y="7" width="8" height="12" rx="4"/><path d="M12 11v8M4 13h4M16 13h4M5 7.5l3 1.5M19 7.5l-3 1.5M5 19l3-1.5M19 19l-3-1.5M10 5 9 3M14 5l1-2"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.5L4.8 18.2A1.8 1.8 0 0 0 6.3 21h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.5V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.9 5.6 5.6 1.9-5.6 1.9L11 18l-1.9-5.6-5.6-1.9 5.6-1.9z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.2 5"/><path d="M4 12a8 8 0 0 1 14.2-5"/><path d="M18.5 3v4h-4M5.5 21v-4h4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3.5 7h17v3a2 2 0 0 0 0 4v3h-17v-3a2 2 0 0 0 0-4z"/><path d="M9.5 7.5v1.5M9.5 11.2v1.6M9.5 15v1.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5z"/><path d="M3 7.5v9L12 21l9-4.5v-9M12 12v9"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4h3l8 5V5L6 10z"/><path d="M17.5 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3.5" y="14" width="4" height="6" rx="1.5"/><rect x="16.5" y="14" width="4" height="6" rx="1.5"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6.5" rx="7" ry="2.8"/><path d="M5 6.5v5c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-5"/><path d="M5 11.5v5c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-5"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9h18M6 6.8h.01M8.5 6.8h.01"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 7V3M15 7V3"/><path d="M6 7h12v3.5a6 6 0 0 1-12 0z"/><path d="M12 16.5V21"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2h.01"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4.5V8"/><circle cx="12" cy="4" r="1.2"/><circle cx="9.5" cy="13" r="1.1"/><circle cx="14.5" cy="13" r="1.1"/><path d="M3 12.5v2.5M21 12.5v2.5"/></symbol>
+    <symbol id="i-person-check" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 21c0-4.4 3.1-7 7-7 1.7 0 3.2.5 4.4 1.3"/><path d="M15.5 18.5l2 2 4-4.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 6.5 19.5 12 14 17.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12.5h18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.5" cy="16.5" r="3"/><circle cx="18.5" cy="16.5" r="3"/><path d="M5.5 16.5h5l3.5-6h3l1.5 6M14 10.5 12 7.5H9.5M17 10.5h2.5"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1.5 16.5V4.5h13v12"/><path d="M14.5 8.5h4.5l3.5 4v4h-1.5"/><path d="M8.5 16.5h7.5"/><circle cx="5.5" cy="17" r="2"/><circle cx="18" cy="17" r="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M2.5 12.5 12 17.5l9.5-5M2.5 16.5 12 21.5l9.5-5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/></symbol>
+
+    <!-- GoGoX van, side view, facing right -->
+    <symbol id="g-van" viewBox="0 0 48 30">
+      <path class="v-body" d="M3 4.5A2.5 2.5 0 0 1 5.5 2H30v20H3z"/>
+      <path class="v-body" d="M30 8h8.6a2 2 0 0 1 1.6.8l5 6.4a2 2 0 0 1 .4 1.2V22H30z"/>
+      <path class="v-win" d="M32.4 10.5h5.6l4 5H32.4z"/>
+      <rect class="v-x" x="11.5" y="7" width="10" height="10" rx="2.4"/>
+      <circle class="v-wheel" cx="11" cy="23.5" r="4.6"/><circle class="v-hub" cx="11" cy="23.5" r="1.8"/>
+      <circle class="v-wheel" cx="37" cy="23.5" r="4.6"/><circle class="v-hub" cx="37" cy="23.5" r="1.8"/>
+    </symbol>
+    <!-- the yellow X from the GoGoX wordmark -->
+    <symbol id="g-x" viewBox="107.6 0.3 24.2 23.4">
+      <path fill="#FFDD00" d="M125.17,6.15c-1.23-1.23-.89-3.38.41-4.68h0a3,3,0,0,1,4.25,0h0a3,3,0,0,1,0,4.25h0C128.53,7,126.4,7.38,125.17,6.15Z"/><path fill="#FFDD00" d="M129.83,18.46,124,13.65a2.21,2.21,0,0,1-.16-3v0a2.33,2.33,0,0,0-.16-3.11h0a2.34,2.34,0,0,0-3.12-.17l0,0a2.22,2.22,0,0,1-3-.16l-4.81-5.79a3,3,0,0,0-4.24,4.25l5.79,4.8a2.22,2.22,0,0,1,0,3.13l-5.79,4.81a3,3,0,0,0,0,4.25h0a3,3,0,0,0,4.24,0l4.81-5.79a2.2,2.2,0,0,1,3.13,0l4.81,5.79a3,3,0,1,0,4.25-4.25Z"/>
+    </symbol>
+    <symbol id="g-wordmark" viewBox="0 0 135 24">
+      <path fill="#FFDD00" d="M125.17,6.15c-1.23-1.23-.89-3.38.41-4.68h0a3,3,0,0,1,4.25,0h0a3,3,0,0,1,0,4.25h0C128.53,7,126.4,7.38,125.17,6.15Z"/><path fill="#FFDD00" d="M129.83,18.46,124,13.65a2.21,2.21,0,0,1-.16-3v0a2.33,2.33,0,0,0-.16-3.11h0a2.34,2.34,0,0,0-3.12-.17l0,0a2.22,2.22,0,0,1-3-.16l-4.81-5.79a3,3,0,0,0-4.24,4.25l5.79,4.8a2.22,2.22,0,0,1,0,3.13l-5.79,4.81a3,3,0,0,0,0,4.25h0a3,3,0,0,0,4.24,0l4.81-5.79a2.2,2.2,0,0,1,3.13,0l4.81,5.79a3,3,0,1,0,4.25-4.25Z"/><path class="wm" d="M65.2,23.45a11.36,11.36,0,1,1,8-19.4l.48.48L71,7.21l-.48-.47A7.49,7.49,0,0,0,65.2,4.51,7.58,7.58,0,1,0,72.52,14h-8V10.19H76.4l.07.6a10.4,10.4,0,0,1,.09,1.3,10.25,10.25,0,0,1-.09,1.29A11.33,11.33,0,0,1,65.2,23.45Z"/><path class="wm" d="M15.44,23.45a11.36,11.36,0,1,1,8-19.4l.48.48L21.27,7.21l-.48-.47a7.49,7.49,0,0,0-5.35-2.23A7.58,7.58,0,1,0,22.76,14h-8V10.19H26.65l.07.6a10.52,10.52,0,0,1,0,2.59A11.34,11.34,0,0,1,15.44,23.45Z"/><path class="wm" d="M90,23.45a11.36,11.36,0,1,1,11.36-11.36A11.37,11.37,0,0,1,90,23.45ZM90,4.53a7.56,7.56,0,1,0,7.56,7.56A7.56,7.56,0,0,0,90,4.53Z"/><path class="wm" d="M40.3,23.45A11.36,11.36,0,1,1,51.66,12.09,11.37,11.37,0,0,1,40.3,23.45Zm0-18.92a7.56,7.56,0,1,0,7.55,7.56A7.57,7.57,0,0,0,40.3,4.53Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="viewport">
+<div id="stage">
+
+<!-- ================================================================
+     01 · TITLE
+     ================================================================ -->
+<section class="slide dark" data-fx="title" data-title="Product, design and AI at GoGoX"
+  data-notes="(0:30) Hi everyone. I lead Product at GoGoX. In the next twenty minutes: how our product team is built, how we work with each other and with the business, and how AI agents are changing the job. Real examples along the way.">
+  <svg class="abs t-logo" viewBox="0 0 135 24" style="left:120px;top:104px;width:240px;height:43px"><use href="#g-wordmark"/></svg>
+  <div class="abs" style="left:120px;top:286px;width:1260px">
+    <h1 class="mega" data-split>Product, design<br>and AI at GoGoX</h1>
+    <p class="lede">How our product team works today, and how AI agents are changing the job.</p>
+  </div>
+  <div class="abs byline" style="left:120px;top:812px"><b>Leslie Lai</b><span>Product Director, GoGoX</span></div>
+  <svg class="abs t-x" viewBox="0 0 24.2 23.4" style="left:1392px;top:250px;width:330px;height:319px"><use href="#g-x" width="24.2" height="23.4"/></svg>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="t-road" class="road" d="M-60 1000 C 380 1000 620 880 960 880 S 1380 790 1560 790"/>
+    <path class="road-dash t-dash" d="M-60 1000 C 380 1000 620 880 960 880 S 1380 790 1560 790"/>
+    <g class="t-pin" data-on="t-road" data-at=".36"><g class="pin-in"><circle class="pin-o" r="14"/><circle class="pin-f" r="6"/></g></g>
+    <g class="t-pin" data-on="t-road" data-at=".66"><g class="pin-in"><circle class="pin-o" r="14"/><circle class="pin-f" r="6"/></g></g>
+    <g class="t-pin t-end" data-on="t-road" data-at="1"><g class="pin-in"><circle class="ring" r="20"/><circle class="pin-o" r="20"/><circle class="pin-f" r="9"/></g></g>
+    <use class="t-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+</section>
+
+<!-- ================================================================
+     02 · GOGOX IN ONE PICTURE
+     ================================================================ -->
+<section class="slide" data-fx="market" data-section="Intro" data-title="One marketplace, many front doors"
+  data-notes="(1:00) Quick context. GoGoX is on-demand intra-city logistics in Hong Kong, mostly vans. Many front doors on the demand side: consumers on the app, SMEs on our business web, enterprises through TMS and API, and now chat and voice. All of them are matched to one shared driver network. Every one of those doors is a product surface we design and run.">
+  <div class="hd"><h2 data-split>One marketplace, many front doors.</h2>
+    <p class="sub">On-demand intra-city logistics, mostly vans. Founded in Hong Kong in 2013.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="mk-p1" class="link mk-link" d="M600 384 C 730 384 740 560 850 560"/>
+    <path id="mk-p2" class="link mk-link" d="M600 504 C 730 504 760 560 850 560"/>
+    <path id="mk-p3" class="link mk-link" d="M600 624 C 730 624 760 560 850 560"/>
+    <path id="mk-p4" class="link mk-link" d="M600 744 C 730 744 740 560 850 560"/>
+    <path id="mk-p5" class="link mk-link" d="M1070 560 L 1320 560"/>
+    <path class="link dashed mk-link" d="M960 672 L 960 796"/>
+    <text class="svgt-sm mk-joblab" x="1200" y="530" text-anchor="middle">matched in seconds</text>
+    <circle class="mk-ring" cx="960" cy="560" r="112"/>
+    <g class="mk-dots">
+      <circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/>
+      <circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/><circle class="dot" r="8" opacity="0"/>
+    </g>
+  </svg>
+  <div class="abs mk-card card row" style="left:180px;top:336px;width:420px;height:96px"><span class="disc"><svg class="ic"><use href="#i-user"/></svg></span><div><b>Consumers</b><span>Client app</span></div></div>
+  <div class="abs mk-card card row" style="left:180px;top:456px;width:420px;height:96px"><span class="disc"><svg class="ic"><use href="#i-store"/></svg></span><div><b>SMEs</b><span>GoGoX Business web</span></div></div>
+  <div class="abs mk-card card row" style="left:180px;top:576px;width:420px;height:96px"><span class="disc"><svg class="ic"><use href="#i-building"/></svg></span><div><b>Enterprises</b><span>TMS and API</span></div></div>
+  <div class="abs mk-card card row" style="left:180px;top:696px;width:420px;height:96px"><span class="disc"><svg class="ic"><use href="#i-chat"/></svg></span><div><b>Chat and voice</b><span>WhatsApp bot, voicebot</span></div></div>
+  <div class="abs mk-hub" style="left:850px;top:450px;width:220px;height:220px">
+    <svg class="hub-x" viewBox="0 0 24.2 23.4"><use href="#g-x" width="24.2" height="23.4"/></svg>
+  </div>
+  <div class="abs mk-drv card" style="left:1320px;top:430px;width:440px;height:260px">
+    <div class="row"><span class="disc"><svg class="ic"><use href="#i-wheel"/></svg></span><div><b>Drivers</b><span>One shared fleet</span></div></div>
+    <div class="chips">
+      <span class="chip"><svg class="ic"><use href="#i-van"/></svg>Vans</span>
+      <span class="chip">5.5-tonne trucks</span>
+      <span class="chip">9-tonne trucks</span>
+      <span class="chip">Couriers</span>
+    </div>
+  </div>
+  <div class="abs mk-bets" style="left:660px;top:800px;width:600px">
+    <span class="bets-lab">New bets</span>
+    <span class="chip lg"><svg class="ic"><use href="#i-taxi"/></svg>Amigo taxi</span>
+    <span class="chip lg"><svg class="ic"><use href="#i-box"/></svg>GoGoMoving</span>
+  </div>
+</section>
+
+<!-- ================================================================
+     03 · MY ROUTE TO PRODUCT DIRECTOR (van drives the CV, click a stop to jump)
+     ================================================================ -->
+<section class="slide" data-fx="career" data-section="My route" data-title="My route to Product Director"
+  data-notes="(1:15) Before we start, a bit about me, since many of you are about to start your careers. I didn't study product. I studied economics at UC Berkeley, and my first job was writing iOS code at a small US startup. That taught me to speak engineer. Click. Then growth at OneSky, in Hong Kong and China: numbers, experiments, and my first team, from three people to more than ten. Click. Then growth at global scale, at Facebook and then ByteDance. Click. Then I joined GoGoVan, now GoGoX, as a product manager for the client app and business, across four markets. That is where I learned to own the customer problem. Click. Then Head of Product: we built our enterprise platform from zero. Now Product Director: the team you just saw, and our AI transformation. Every stop added one skill. None of it was a straight line.">
+  <div class="hd"><span class="kick">My route</span><h2 data-split>From economics student to Product Director.</h2></div>
+  <div class="abs cr-bag" style="left:120px;top:262px;width:1680px"><span class="cr-bl">Picked up on the way</span><div class="cr-slots"></div></div>
+  <svg class="ov cr-ov" viewBox="0 0 1920 1080">
+    <path id="cr-road" class="road cr-road" d="M120 640 L250 640 C 420 640 450 560 620 560 C 790 560 810 640 980 640 C 1150 640 1170 560 1340 560 C 1510 560 1550 610 1720 610 L1800 610"/>
+    <path class="road-dash cr-dash" d="M120 640 L250 640 C 420 640 450 560 620 560 C 790 560 810 640 980 640 C 1150 640 1170 560 1340 560 C 1510 560 1550 610 1720 610 L1800 610"/>
+    <g class="cr-links"></g><g class="cr-stops"></g>
+    <g class="cr-van-g"><use class="van" href="#g-van" x="-40" y="-44" width="80" height="50"/></g>
+  </svg>
+  <div class="cr-cards"></div>
+</section>
+
+<!-- ================================================================
+     D1 · GALLERY — ten real products (click: apps → web)
+     ================================================================ -->
+<section class="slide" data-fx="gallery" data-section="Intro" data-title="Ten products, one design team"
+  data-notes="(1:15) First, our products. These are real screens from our live products. On mobile: the client app, GoGoMoving inside it, our driver app, and for Amigo, the passenger app and the taxi-driver app, plus the TMS driver app for enterprise fleets. [click] On the web: the TMS admin portal, track and trace, route planning, GoGoX Business, gogox.com and our public API docs. Click any screen to zoom in.">
+  <div class="hd"><h2 data-split>Ten products. One design team.</h2>
+    <p class="sub">Real screens from our live products. Click any screen to zoom in.</p></div>
+  <div class="abs seg-tabs gl-tabs" style="right:120px;top:120px" data-ui>
+    <button data-ui data-k="0" style="width:120px">Apps</button><button data-ui data-k="1" style="width:230px">Web and enterprise</button><i class="seg-knob gl-knob"></i>
+  </div>
+  <div class="gl-page gl-apps">
+    <figure class="gl-ph" style="left:174px"><div class="ph"><img src="img/app-client-vehicle.jpg" alt="GoGoX client app" data-zoom="GoGoX client app, choosing a vehicle" data-ui></div><figcaption><b>Client app</b><span>Consumers and SMEs</span></figcaption></figure>
+    <figure class="gl-ph" style="left:442px"><div class="ph"><img src="img/app-client-moving.jpg" alt="GoGoMoving" data-zoom="GoGoMoving, inside the client app" data-ui></div><figcaption><b>GoGoMoving</b><span>Home and office moves</span></figcaption></figure>
+    <figure class="gl-ph" style="left:710px"><div class="ph"><img src="img/app-driver-jobs.jpg" alt="GoGoX driver app" data-zoom="GoGoX 夥伴 driver app, the job list" data-ui></div><figcaption><b>Driver app</b><span>Van and truck drivers</span></figcaption></figure>
+    <figure class="gl-ph" style="left:978px"><div class="ph"><img src="img/app-amigo-home.jpg" alt="Amigo taxi app" data-zoom="Amigo 的士, passenger app" data-ui></div><figcaption><b>Amigo taxi</b><span>Passengers</span></figcaption></figure>
+    <figure class="gl-ph" style="left:1246px"><div class="ph"><img src="img/app-amigodriver-offer.jpg" alt="Amigo driver app" data-zoom="Amigo 的士司機夥伴, taxi-driver app" data-ui></div><figcaption><b>Amigo driver</b><span>Taxi drivers</span></figcaption></figure>
+    <figure class="gl-ph" style="left:1514px"><div class="ph"><img src="img/app-tms-driver.jpg" alt="TMS driver app" data-zoom="TMS driver app, for enterprise fleets" data-ui></div><figcaption><b>TMS driver app</b><span>Enterprise fleets</span></figcaption></figure>
+  </div>
+  <div class="gl-page gl-web">
+    <figure class="gl-bw" style="left:120px;top:286px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>tms / orders</span></div><img src="img/web-tms-admin.jpg" alt="" data-zoom="TMS admin portal, order management" data-ui></div><figcaption><b>TMS admin portal</b><span>Enterprise operations</span></figcaption></figure>
+    <figure class="gl-bw" style="left:690px;top:286px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>tms / track</span></div><img src="img/web-tms-track.jpg" alt="" data-zoom="Track and trace, for enterprise customers" data-ui></div><figcaption><b>Track and trace</b><span>Enterprise customers</span></figcaption></figure>
+    <figure class="gl-bw" style="left:1260px;top:286px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>tms / routes</span></div><img src="img/web-tms-route.jpg" alt="" data-zoom="Route planning, multi-stop routes on one map" data-ui></div><figcaption><b>Route planning</b><span>Dispatchers</span></figcaption></figure>
+    <figure class="gl-bw" style="left:120px;top:626px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>gogox.com / business</span></div><img src="img/web-ggxb-site.jpg" alt="" data-zoom="GoGoX Business, site revamp" data-ui></div><figcaption><b>GoGoX Business</b><span>SMEs and corporates</span></figcaption></figure>
+    <figure class="gl-bw" style="left:690px;top:626px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>gogox.com / estimate</span></div><img src="img/web-gogox-fee.jpg" alt="" data-zoom="gogox.com, fee estimate" data-ui></div><figcaption><b>gogox.com</b><span>Everyone</span></figcaption></figure>
+    <figure class="gl-bw" style="left:1260px;top:626px"><div class="bw"><div class="bw-bar"><i></i><i></i><i></i><span>api docs / place an order</span></div><img src="img/web-api-docs.jpg" alt="" data-zoom="Public API docs, place an order" data-ui></div><figcaption><b>Public API docs</b><span>Developers</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ================================================================
+     03 · DIVIDER 1
+     ================================================================ -->
+<section class="slide dark divider" data-fx="divider" data-stop="1" data-title="Part 1: How we're built"
+  data-notes="(0:10) Part one: how we're built.">
+  <div class="abs" style="left:120px;top:236px;width:1500px">
+    <div class="div-num">01</div>
+    <h2 class="div-title" data-split>How we're built</h2>
+    <p class="div-sub">The team, our themes, and the number we steer by</p>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="d1-road" class="road d-road" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <path class="road-dash d-dash" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <g class="d-pin now" data-on="d1-road" data-at=".2"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Team</text></g></g>
+    <g class="d-pin" data-on="d1-road" data-at=".4"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Ways of working</text></g></g>
+    <g class="d-pin" data-on="d1-road" data-at=".6"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Design</text></g></g>
+    <g class="d-pin" data-on="d1-road" data-at=".8"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">AI</text></g></g>
+    <use class="d-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+</section>
+
+<!-- ================================================================
+     04 · THE TEAM
+     ================================================================ -->
+<section class="slide" data-fx="team" data-section="How we're built" data-title="Nine people, two crafts, one team"
+  data-notes="(1:00) Nine people: one director, four product managers, four designers. We sit as one team, not two departments. Two of our designers are also product owners for their areas. Engineering, QA and data sit in Tech, but they are inside every theme with us, day to day.">
+  <div class="hd"><h2 data-split>Nine people. Two crafts. One team.</h2>
+    <p class="sub">Product management and product design sit together, under one director.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="link-ink tm-link" d="M960 410 V 446 H 540 V 478"/>
+    <path class="link-ink tm-link" d="M960 410 V 446 H 1380 V 478"/>
+  </svg>
+  <div class="abs tm-root card row" style="left:690px;top:296px;width:540px;height:114px">
+    <span class="disc ink"><svg class="ic"><use href="#i-flag"/></svg></span>
+    <div><b>Product director</b><span>Strategy, operating model, AI platform</span></div>
+  </div>
+  <div class="abs tm-panel" style="left:160px;top:478px;width:760px;height:356px">
+    <div class="br-h"><svg class="ic"><use href="#i-target"/></svg>Product management</div>
+  </div>
+  <div class="abs tm-panel" style="left:1000px;top:478px;width:760px;height:356px">
+    <div class="br-h"><svg class="ic"><use href="#i-pen"/></svg>Product design</div>
+  </div>
+  <div class="abs tm-card card pm" style="left:180px;top:548px"><b>Client app and web</b><span>Consumer app, Business web, Moving</span></div>
+  <div class="abs tm-card card pm" style="left:560px;top:548px"><b>Enterprise and drivers</b><span>Enterprise platform, driver app</span></div>
+  <div class="abs tm-card card pm" style="left:180px;top:690px"><b>AI chatbots</b><span>WhatsApp, web chat, voice</span></div>
+  <div class="abs tm-card card pm" style="left:560px;top:690px"><b>Amigo taxi</b><span>Passenger, driver and admin apps</span></div>
+  <div class="abs tm-card card pd" style="left:1020px;top:548px"><b>Design lead</b><span>Amigo, web chat, gogox.com</span></div>
+  <div class="abs tm-card card pd" style="left:1400px;top:548px"><b>Product designer</b><span>Client app, Business, Moving</span></div>
+  <div class="abs tm-card card pd" style="left:1020px;top:690px"><b>Designer <i class="po-tag">+ product owner</i></b><span>Drivers and enterprise</span></div>
+  <div class="abs tm-card card pd" style="left:1400px;top:690px"><b>Designer <i class="po-tag">+ product owner</i></b><span>Design system and research</span></div>
+  <div class="abs tm-tech" style="left:160px;top:870px;width:1600px;height:84px">
+    <span class="tech-lab">Beside us in every theme</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-phone"/></svg>Frontend</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-server"/></svg>Backend</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-flask"/></svg>QA</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-db"/></svg>Data</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-users"/></svg>Business teams</span>
+  </div>
+</section>
+
+<!-- ================================================================
+     05 · THEMES (interactive table)
+     ================================================================ -->
+<section class="slide" data-fx="themes" data-section="How we're built" data-title="We organise around users, not features"
+  data-notes="(1:15) We organise around users, not features. Each column is a theme: a small squad with a PM, a designer, frontend, backend and QA, plus the business team closest to that user. Each theme has its own board, its own backlog and its own North Star metric. Click any column to spotlight it.">
+  <div class="hd"><h2 data-split>We organise around users, not features.</h2>
+    <p class="sub">Each theme is a small squad with its own board, backlog and North Star.</p></div>
+  <div class="abs th-wrap" style="left:120px;top:290px;width:1680px;height:560px">
+    <div class="th-hl"></div>
+    <div class="th-grid">
+      <div class="th-corner"></div>
+      <div class="th-head" data-col="0" data-ui><span class="disc"><svg class="ic"><use href="#i-user"/></svg></span><b>Client experience</b></div>
+      <div class="th-head" data-col="1" data-ui><span class="disc"><svg class="ic"><use href="#i-store"/></svg></span><b>Business experience</b></div>
+      <div class="th-head" data-col="2" data-ui><span class="disc"><svg class="ic"><use href="#i-wheel"/></svg></span><b>Partner experience</b></div>
+      <div class="th-head" data-col="3" data-ui><span class="disc"><svg class="ic"><use href="#i-building"/></svg></span><b>Enterprise platform</b></div>
+      <div class="th-head" data-col="4" data-ui><span class="disc"><svg class="ic"><use href="#i-chat"/></svg></span><b>AI integration</b></div>
+      <div class="th-head" data-col="5" data-ui><span class="disc"><svg class="ic"><use href="#i-taxi"/></svg></span><b>Amigo taxi</b></div>
+
+      <div class="th-rowlab">Serves</div>
+      <div class="th-c" data-r="1" data-col="0" data-ui>Consumers</div>
+      <div class="th-c" data-r="1" data-col="1" data-ui>SMEs and corporate accounts</div>
+      <div class="th-c" data-r="1" data-col="2" data-ui>Drivers</div>
+      <div class="th-c" data-r="1" data-col="3" data-ui>Enterprise clients</div>
+      <div class="th-c" data-r="1" data-col="4" data-ui>Customers on chat and voice</div>
+      <div class="th-c" data-r="1" data-col="5" data-ui>Passengers and taxi drivers</div>
+
+      <div class="th-rowlab">Builds</div>
+      <div class="th-c" data-r="2" data-col="0" data-ui>Client app, booking flow, Moving web</div>
+      <div class="th-c" data-r="2" data-col="1" data-ui>GoGoX Business web portal</div>
+      <div class="th-c" data-r="2" data-col="2" data-ui>Driver app, onboarding, earnings</div>
+      <div class="th-c" data-r="2" data-col="3" data-ui>TMS and API integrations</div>
+      <div class="th-c" data-r="2" data-col="4" data-ui>WhatsApp bot, voicebot, web chat</div>
+      <div class="th-c" data-r="2" data-col="5" data-ui>Passenger, driver and admin apps</div>
+
+      <div class="th-rowlab">North Star</div>
+      <div class="th-c ns" data-r="3" data-col="0" data-ui><svg class="ic"><use href="#i-star"/></svg>Weekly completed orders</div>
+      <div class="th-c ns" data-r="3" data-col="1" data-ui><svg class="ic"><use href="#i-star"/></svg>Business GTV</div>
+      <div class="th-c ns" data-r="3" data-col="2" data-ui><svg class="ic"><use href="#i-star"/></svg>Matched orders that complete</div>
+      <div class="th-c ns" data-r="3" data-col="3" data-ui><svg class="ic"><use href="#i-star"/></svg>Orders via API</div>
+      <div class="th-c ns" data-r="3" data-col="4" data-ui><svg class="ic"><use href="#i-star"/></svg>Chatbot orders per week</div>
+      <div class="th-c ns" data-r="3" data-col="5" data-ui><svg class="ic"><use href="#i-star"/></svg>Trip fill rate</div>
+
+      <div class="th-rowlab">Works with</div>
+      <div class="th-c" data-r="4" data-col="0" data-ui>CS, Ops, Moving</div>
+      <div class="th-c" data-r="4" data-col="1" data-ui>Sales, CS</div>
+      <div class="th-c" data-r="4" data-col="2" data-ui>Driver operations</div>
+      <div class="th-c" data-r="4" data-col="3" data-ui>Enterprise sales</div>
+      <div class="th-c" data-r="4" data-col="4" data-ui>CS, Moving staff</div>
+      <div class="th-c" data-r="4" data-col="5" data-ui>Amigo operations</div>
+    </div>
+  </div>
+  <div class="abs th-legend" style="left:120px;top:890px;width:1680px">
+    <span class="leg-lab">Every theme</span>
+    <span class="chip pm-chip"><svg class="ic"><use href="#i-target"/></svg>PM</span>
+    <span class="chip pd-chip"><svg class="ic"><use href="#i-pen"/></svg>Designer</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-phone"/></svg>Frontend</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-server"/></svg>Backend</span>
+    <span class="chip tech"><svg class="ic"><use href="#i-flask"/></svg>QA</span>
+    <span class="leg-plus">one board, two-week sprints</span>
+  </div>
+</section>
+
+<!-- ================================================================
+     06 · METRIC TREE
+     ================================================================ -->
+<section class="slide" data-fx="metrics" data-section="How we're built" data-title="Every theme ladders up to one number"
+  data-notes="(0:50) And every theme metric ladders up to one company number: weekly completed orders, supported by funnel conversion, satisfaction and lifetime value. We track all of it live on our own Operating Model dashboard, refreshed twice a day, and always compared with the same weeks last year, so seasonality never fools us.">
+  <div class="hd"><h2 data-split>Every theme ladders up to one number.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="link-ink mt-link" d="M960 446 V 560"/>
+    <path class="link-ink mt-link" d="M250 560 H 1670"/>
+    <path class="link-ink mt-link" d="M250 560 V 618"/><path class="link-ink mt-link" d="M534 560 V 618"/><path class="link-ink mt-link" d="M818 560 V 618"/>
+    <path class="link-ink mt-link" d="M1102 560 V 618"/><path class="link-ink mt-link" d="M1386 560 V 618"/><path class="link-ink mt-link" d="M1670 560 V 618"/>
+    <path id="mt-p0" class="ghost" d="M250 618 V 560 H 960 V 446"/>
+    <path id="mt-p1" class="ghost" d="M534 618 V 560 H 960 V 446"/>
+    <path id="mt-p2" class="ghost" d="M818 618 V 560 H 960 V 446"/>
+    <path id="mt-p3" class="ghost" d="M1102 618 V 560 H 960 V 446"/>
+    <path id="mt-p4" class="ghost" d="M1386 618 V 560 H 960 V 446"/>
+    <path id="mt-p5" class="ghost" d="M1670 618 V 560 H 960 V 446"/>
+    <g class="mt-dots"><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/></g>
+  </svg>
+  <div class="abs mt-root" style="left:560px;top:268px;width:800px;height:178px">
+    <div class="mt-glow"></div>
+    <span class="mt-k"><svg class="ic"><use href="#i-star"/></svg>Company North Star</span>
+    <b>Weekly completed orders</b>
+    <span class="mt-s">supported by funnel conversion, satisfaction and lifetime value</span>
+  </div>
+  <div class="abs mt-leaf card" style="left:130px;top:618px"><span class="disc"><svg class="ic"><use href="#i-user"/></svg></span><i>Client experience</i><b>Orders and completion rate</b></div>
+  <div class="abs mt-leaf card" style="left:414px;top:618px"><span class="disc"><svg class="ic"><use href="#i-store"/></svg></span><i>Business experience</i><b>Business GTV and active accounts</b></div>
+  <div class="abs mt-leaf card" style="left:698px;top:618px"><span class="disc"><svg class="ic"><use href="#i-wheel"/></svg></span><i>Partner experience</i><b>Matched orders that complete</b></div>
+  <div class="abs mt-leaf card" style="left:982px;top:618px"><span class="disc"><svg class="ic"><use href="#i-building"/></svg></span><i>Enterprise platform</i><b>Share of orders via API</b></div>
+  <div class="abs mt-leaf card" style="left:1266px;top:618px"><span class="disc"><svg class="ic"><use href="#i-chat"/></svg></span><i>AI integration</i><b>Chatbot orders per week</b></div>
+  <div class="abs mt-leaf card" style="left:1550px;top:618px"><span class="disc"><svg class="ic"><use href="#i-taxi"/></svg></span><i>Amigo taxi</i><b>Trip fill rate</b></div>
+  <div class="abs mt-note" style="left:120px;top:868px;width:1680px">
+    <span class="disc sm"><svg class="ic"><use href="#i-gauge"/></svg></span>
+    Live on our Operating Model dashboard. Refreshed twice a day, compared with the same weeks last year.
+  </div>
+</section>
+
+<!-- ================================================================
+     07 · DIVIDER 2
+     ================================================================ -->
+<section class="slide dark divider" data-fx="divider" data-stop="2" data-title="Part 2: How we work"
+  data-notes="(0:10) Part two: how we work.">
+  <div class="abs" style="left:120px;top:236px;width:1500px">
+    <div class="div-num">02</div>
+    <h2 class="div-title" data-split>How we work</h2>
+    <p class="div-sub">Two crafts, many partners, every channel, one delivery route</p>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="d2-road" class="road d-road" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <path class="road-dash d-dash" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <g class="d-pin done" data-on="d2-road" data-at=".2"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Team</text></g></g>
+    <g class="d-pin now" data-on="d2-road" data-at=".4"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Ways of working</text></g></g>
+    <g class="d-pin" data-on="d2-road" data-at=".6"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Design</text></g></g>
+    <g class="d-pin" data-on="d2-road" data-at=".8"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">AI</text></g></g>
+    <use class="d-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+</section>
+
+<!-- ================================================================
+     08 · PM × PD
+     ================================================================ -->
+<section class="slide" data-fx="pmpd" data-section="How we work" data-title="PM owns the why, design owns the how"
+  data-notes="(1:00) PM owns the why: the problem, the metric, the priority, the trade-offs. Design owns the how: research, flows, prototypes, the design system. We both own the outcome. Look at the bars: each craft leads in different phases, but neither one ever leaves the room.">
+  <div class="hd"><h2 data-split>PM owns the why. Design owns the how.</h2>
+    <p class="sub">Both of us own the outcome, from the first idea to the results after launch.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="dd-shape" d="M200 500 L570 350 L940 500 L570 650 Z"/>
+    <path class="dd-shape" d="M980 500 L1350 350 L1720 500 L1350 650 Z"/>
+    <path class="dd-mid" d="M570 350 V 650 M1350 350 V 650"/>
+    <path id="dd-top" class="ghost" d="M200 500 L570 350 L940 500 L980 500 L1350 350 L1720 500"/>
+    <path id="dd-bot" class="ghost" d="M200 500 L570 650 L940 500 L980 500 L1350 650 L1720 500"/>
+    <text class="svgt-phase dd-phase" x="400" y="510" text-anchor="middle">Discover</text>
+    <text class="svgt-phase dd-phase" x="752" y="510" text-anchor="middle">Define</text>
+    <text class="svgt-phase dd-phase" x="1170" y="510" text-anchor="middle">Develop</text>
+    <text class="svgt-phase dd-phase" x="1530" y="510" text-anchor="middle">Deliver</text>
+    <text class="svgt-sm dd-top" x="570" y="328" text-anchor="middle">The right problem</text>
+    <text class="svgt-sm dd-top" x="1350" y="328" text-anchor="middle">The right solution</text>
+    <circle class="dd-dot a" r="9" opacity="0"/><circle class="dd-dot b" r="9" opacity="0"/>
+  </svg>
+  <div class="abs lane" style="left:200px;top:700px;width:1520px">
+    <div class="lane-lab pm"><svg class="ic"><use href="#i-target"/></svg>Product manager</div>
+    <div class="segs">
+      <div class="seg pm" style="--o:.45"><span>Problem and metric</span></div>
+      <div class="seg pm lead" style="--o:1"><span>PRD and priority</span></div>
+      <div class="seg pm" style="--o:.45"><span>Trade-offs</span></div>
+      <div class="seg pm lead" style="--o:1"><span>Launch and readout</span></div>
+    </div>
+  </div>
+  <div class="abs lane" style="left:200px;top:836px;width:1520px">
+    <div class="lane-lab pd"><svg class="ic"><use href="#i-pen"/></svg>Product designer</div>
+    <div class="segs">
+      <div class="seg pd lead" style="--o:1"><span>Research</span></div>
+      <div class="seg pd" style="--o:.45"><span>Flows</span></div>
+      <div class="seg pd lead" style="--o:1"><span>Prototypes and UI</span></div>
+      <div class="seg pd" style="--o:.45"><span>Design QA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     09 · WORKING WITH OTHER TEAMS
+     ================================================================ -->
+<section class="slide" data-fx="partners" data-section="How we work" data-title="Between the business and the builders"
+  data-notes="(1:00) We sit between the business and the builders. The business brings needs, requests and feedback. We turn that into a PRD and a prototype with clear priorities. Tech comes back with estimates, questions and builds. And we take launches, readouts and training back to the business. All of it runs on a two-week sprint rhythm, inside a quarterly plan.">
+  <div class="hd"><h2 data-split>We sit between the business and the builders.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="pt-a1" class="flow pt-arrow" d="M520 420 C 640 380 720 410 800 480"/>
+    <path id="pt-a2" class="flow pt-arrow" d="M1120 480 C 1200 410 1280 380 1400 420"/>
+    <path id="pt-a3" class="flow pt-arrow" d="M1400 720 C 1280 760 1200 730 1120 660"/>
+    <path id="pt-a4" class="flow pt-arrow" d="M800 660 C 720 730 640 760 520 720"/>
+    <text class="svgt-lab pt-lab" x="660" y="372" text-anchor="middle">Needs, requests, feedback</text>
+    <text class="svgt-lab pt-lab" x="1260" y="372" text-anchor="middle">PRD + prototype, priorities</text>
+    <text class="svgt-lab pt-lab" x="1260" y="800" text-anchor="middle">Estimates, questions, builds</text>
+    <text class="svgt-lab pt-lab" x="660" y="800" text-anchor="middle">Launches, readouts, training</text>
+    <g class="pt-dots"><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/><circle class="dot" r="7" opacity="0"/></g>
+  </svg>
+  <div class="abs pt-col" style="left:120px;top:296px;width:400px">
+    <div class="col-h">Business</div>
+    <span class="pill biz"><svg class="ic"><use href="#i-sliders"/></svg>Operations</span>
+    <span class="pill biz"><svg class="ic"><use href="#i-headset"/></svg>Customer service</span>
+    <span class="pill biz"><svg class="ic"><use href="#i-briefcase"/></svg>Sales</span>
+    <span class="pill biz"><svg class="ic"><use href="#i-megaphone"/></svg>Marketing</span>
+    <span class="pill biz"><svg class="ic"><use href="#i-box"/></svg>GoGoMoving staff</span>
+    <span class="pill biz"><svg class="ic"><use href="#i-coins"/></svg>Finance</span>
+  </div>
+  <div class="abs pt-core" style="left:800px;top:410px;width:320px;height:320px">
+    <b>Product</b>
+    <div class="pt-two"><span class="chip pm-chip"><svg class="ic"><use href="#i-target"/></svg>PM</span><span class="chip pd-chip"><svg class="ic"><use href="#i-pen"/></svg>Design</span></div>
+  </div>
+  <div class="abs pt-col right" style="left:1400px;top:296px;width:400px">
+    <div class="col-h">Tech</div>
+    <span class="pill tech"><svg class="ic"><use href="#i-phone"/></svg>Frontend</span>
+    <span class="pill tech"><svg class="ic"><use href="#i-server"/></svg>Backend</span>
+    <span class="pill tech"><svg class="ic"><use href="#i-flask"/></svg>QA</span>
+    <span class="pill tech"><svg class="ic"><use href="#i-db"/></svg>Data</span>
+    <span class="pill tech"><svg class="ic"><use href="#i-shield"/></svg>Infra and security</span>
+  </div>
+  <div class="abs pt-rituals" style="left:120px;top:868px;width:1680px">
+    <div class="rit-track"></div>
+    <div class="rit-hl"></div>
+    <span class="rit"><svg class="ic"><use href="#i-cal"/></svg>Quarterly plan</span>
+    <span class="rit"><svg class="ic"><use href="#i-layers"/></svg>Sprint planning</span>
+    <span class="rit"><svg class="ic"><use href="#i-doc"/></svg>Grooming</span>
+    <span class="rit"><svg class="ic"><use href="#i-users"/></svg>Daily stand-up</span>
+    <span class="rit"><svg class="ic"><use href="#i-eye"/></svg>UAT and demo</span>
+    <span class="rit"><svg class="ic"><use href="#i-flag"/></svg>Release</span>
+    <span class="rit-loop"><svg class="ic"><use href="#i-loop"/></svg>every 2 weeks</span>
+  </div>
+</section>
+
+<!-- ================================================================
+     10 · FEEDBACK
+     ================================================================ -->
+<section class="slide" data-fx="feedback" data-section="How we work" data-title="We listen on every channel"
+  data-notes="(1:00) We listen on every channel: app store reviews, CS chats and WhatsApp, complaints, driver interviews, in-app feedback, requests from the business through our request desk, and behaviour data. Everything lands in one triage. Each signal ends up on the roadmap, as a quick fix in the next sprint, or logged as not now with a reason. In pilot, an AI now pre-reads and clusters all of it first.">
+  <div class="hd"><h2 data-split>We listen on every channel.</h2>
+    <p class="sub">Customers, drivers and the business all feed one triage.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="fb-funnel" d="M780 330 L1110 566 L1110 646 L780 882 Z"/>
+    <path class="fb-tube" d="M1110 606 C 1190 606 1210 395 1300 395"/>
+    <path class="fb-tube" d="M1110 606 L 1300 606"/>
+    <path class="fb-tube" d="M1110 606 C 1190 606 1210 817 1300 817"/>
+    <g class="fb-dots"></g>
+  </svg>
+  <div class="abs fb-src" style="left:120px;top:322px;width:420px">
+    <span class="pill src" data-g="c"><svg class="ic"><use href="#i-star"/></svg>App store reviews</span>
+    <span class="pill src" data-g="c"><svg class="ic"><use href="#i-chat"/></svg>CS chats and WhatsApp</span>
+    <span class="pill src" data-g="c"><svg class="ic"><use href="#i-alert"/></svg>Complaints</span>
+    <span class="pill src gap" data-g="d"><svg class="ic"><use href="#i-wheel"/></svg>Driver interviews</span>
+    <span class="pill src" data-g="d"><svg class="ic"><use href="#i-phone"/></svg>In-app driver feedback</span>
+    <span class="pill src gap" data-g="b"><svg class="ic"><use href="#i-ticket"/></svg>Business request desk</span>
+    <span class="pill src" data-g="b"><svg class="ic"><use href="#i-users"/></svg>Ops, Sales, Moving</span>
+    <span class="pill src gap" data-g="x"><svg class="ic"><use href="#i-chart"/></svg>Funnels and behaviour data</span>
+  </div>
+  <div class="abs fb-tri" style="left:790px;top:560px;width:300px">
+    <b>Triage</b><span>cluster, size, decide</span>
+  </div>
+  <div class="abs fb-ai" style="left:752px;top:268px"><svg class="ic"><use href="#i-spark"/></svg>AI pre-reads and clusters (pilot)</div>
+  <div class="abs fb-bin card" style="left:1300px;top:330px"><span class="disc"><svg class="ic"><use href="#i-flag"/></svg></span><div><b>Roadmap</b><span>Sized and ranked</span></div><div class="fb-meter"><i></i></div></div>
+  <div class="abs fb-bin card" style="left:1300px;top:541px"><span class="disc"><svg class="ic"><use href="#i-bug"/></svg></span><div><b>Quick fix</b><span>Into the next sprint</span></div><div class="fb-meter"><i></i></div></div>
+  <div class="abs fb-bin card" style="left:1300px;top:752px"><span class="disc"><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Not now</b><span>Logged with a reason</span></div><div class="fb-meter"><i></i></div></div>
+</section>
+
+<!-- ================================================================
+     11 · DELIVERY ROUTE
+     ================================================================ -->
+<section class="slide" data-fx="process" data-section="How we work" data-title="From request to release"
+  data-notes="(1:00) This is our delivery route. Request, discovery, PRD plus prototype, design, tickets, build, code review, QA, release, and a launch readout. Every theme board shares the same workflow, in two-week sprints. Remember this route; we'll come back to it in the AI part.">
+  <div class="hd"><h2 data-split>From request to release.</h2>
+    <p class="sub">One shared route, on every theme board.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <g class="pr-phases">
+      <path class="bracket" d="M160 468 V 454 H 760 V 468"/><text class="svgt-sm" x="460" y="440" text-anchor="middle">Shape</text>
+      <path class="bracket" d="M800 468 V 454 H 946 V 468"/><text class="svgt-sm" x="873" y="440" text-anchor="middle">Plan</text>
+      <path class="bracket" d="M986 468 V 454 H 1454 V 468"/><text class="svgt-sm" x="1220" y="440" text-anchor="middle">Build</text>
+      <path class="bracket" d="M1494 468 V 454 H 1780 V 468"/><text class="svgt-sm" x="1637" y="440" text-anchor="middle">Ship</text>
+    </g>
+    <path id="pr-road" class="road pr-road" d="M130 530 H 1790"/>
+    <path class="road-dash pr-dash" d="M130 530 H 1790"/>
+    <g class="pr-stops"></g>
+    <path class="bracket pr-zoom" d="M1047 660 V 690 Q 1047 710 1027 710 H 520 Q 500 710 500 730 V 750 M1393 660 V 690 Q 1393 710 1413 710 H 1780 Q 1800 710 1800 730 V 750"/>
+    <g class="pr-van-g" transform="translate(1740 530)"><use class="van" href="#g-van" x="-40" y="-44" width="80" height="50"/></g>
+  </svg>
+  <div class="abs pr-labels"></div>
+  <div class="abs pr-status" style="left:500px;top:762px;width:1300px">
+    <span class="st">Open</span><span class="st-ar"></span>
+    <span class="st">In progress</span><span class="st-ar"></span>
+    <span class="st">Code review</span><span class="st-ar"></span>
+    <span class="st">Ready for QA</span><span class="st-ar"></span>
+    <span class="st">QA in progress</span><span class="st-ar"></span>
+    <span class="st done">Closed</span>
+    <div class="st-tk"></div><div class="st-tk"></div><div class="st-tk"></div>
+  </div>
+  <div class="abs pr-foot" style="left:500px;top:850px;width:1300px"><svg class="ic"><use href="#i-loop"/></svg>Same flow on every theme board, in two-week sprints</div>
+</section>
+
+<!-- ================================================================
+     DIVIDER 3 · DESIGN
+     ================================================================ -->
+<section class="slide dark divider" data-fx="divider" data-stop="3" data-title="Part 3: Design at GoGoX"
+  data-notes="(0:10) Part three: how design works at GoGoX.">
+  <div class="abs" style="left:120px;top:236px;width:1500px">
+    <div class="div-num">03</div>
+    <h2 class="div-title" data-split>Design at GoGoX</h2>
+    <p class="div-sub">Our products, how we research, and one design system</p>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="dz-road" class="road d-road" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <path class="road-dash d-dash" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <g class="d-pin done" data-on="dz-road" data-at=".2"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Team</text></g></g>
+    <g class="d-pin done" data-on="dz-road" data-at=".4"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Ways of working</text></g></g>
+    <g class="d-pin now" data-on="dz-road" data-at=".6"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Design</text></g></g>
+    <g class="d-pin" data-on="dz-road" data-at=".8"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">AI</text></g></g>
+    <use class="d-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+</section>
+
+<!-- ================================================================
+     D2 · HOW THE DESIGN TEAM RUNS
+     ================================================================ -->
+<section class="slide" data-fx="dteam" data-section="Design at GoGoX" data-title="Embedded in products, united by one system"
+  data-notes="(1:00) Four designers. Each one lives inside a few products, next to that theme's PM and engineers: the design lead on Amigo, web chat and gogox.com; one designer on the client app, GoGoX Business and Moving; one on the driver app and our enterprise TMS, who is also its product owner; and one on the design system and research, also a product owner. What holds it together is one shared system: the component kit in code and Figma, design crit, shared research, localisation keys in English and Traditional Chinese, and design QA before every release. And the toolchain has changed a lot since 2022: Sketch, InVision and Zeplin became Figma, code prototypes, a mirrored component kit, Crowdin and a design QA agent.">
+  <div class="hd"><h2 data-split>Embedded in products. United by one system.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="link-ink dt-link" d="M315 622 V 676"/><path class="link-ink dt-link" d="M745 622 V 676"/>
+    <path class="link-ink dt-link" d="M1175 622 V 676"/><path class="link-ink dt-link" d="M1605 622 V 676"/>
+  </svg>
+  <div class="abs dt-col" style="left:120px">
+    <div class="dt-h"><b>Design lead</b><i class="tag-y">+ design manager</i></div>
+    <div class="dt-th"><img class="th-ph" src="img/app-amigo-home.jpg" alt=""><img class="th-web" src="img/web-gogox-fee.jpg" alt=""></div>
+    <div class="dt-p"><span>Amigo taxi</span><span>Web live chat</span><span>gogox.com</span></div>
+  </div>
+  <div class="abs dt-col" style="left:550px">
+    <div class="dt-h"><b>Product designer</b></div>
+    <div class="dt-th"><img class="th-ph" src="img/app-client-vehicle.jpg" alt=""><img class="th-web" src="img/web-ggxb-site.jpg" alt=""></div>
+    <div class="dt-p"><span>Client app</span><span>GoGoX Business</span><span>GoGoMoving</span></div>
+  </div>
+  <div class="abs dt-col" style="left:980px">
+    <div class="dt-h"><b>Designer</b><i class="tag-y">+ product owner</i></div>
+    <div class="dt-th"><img class="th-ph" src="img/app-driver-jobs.jpg" alt=""><img class="th-web" src="img/web-tms-admin.jpg" alt=""></div>
+    <div class="dt-p"><span>Driver app</span><span>Enterprise TMS</span></div>
+  </div>
+  <div class="abs dt-col" style="left:1410px">
+    <div class="dt-h"><b>Designer</b><i class="tag-y">+ product owner</i></div>
+    <div class="dt-th dt-sys">
+      <div class="sys-sw"><i style="background:#0088BF"></i><i style="background:#FFDD00"></i><i style="background:#00121A"></i><i style="background:#F3F7F8"></i><i style="background:#D9534F"></i></div>
+      <div class="sys-btns"><span class="sb p">下一步</span><span class="sb y">立即報價</span><span class="sb o">取消</span></div>
+    </div>
+    <div class="dt-p"><span>Design system</span><span>Research</span><span>Prototypes</span></div>
+  </div>
+  <div class="abs dt-band" style="left:120px;top:676px;width:1680px">
+    <b>One shared system</b>
+    <span class="chip"><svg class="ic"><use href="#i-layers"/></svg>Component kit, in code and Figma</span>
+    <span class="chip"><svg class="ic"><use href="#i-eye"/></svg>Design crit</span>
+    <span class="chip"><svg class="ic"><use href="#i-users"/></svg>Shared research</span>
+    <span class="chip"><svg class="ic"><use href="#i-chat"/></svg>Copy keys, EN and 繁中</span>
+    <span class="chip"><svg class="ic"><use href="#i-check"/></svg>Design QA before release</span>
+  </div>
+  <div class="abs dt-tools" style="left:120px;top:812px;width:1680px">
+    <div class="tl-y"><span class="y26">2026</span><span class="y22">2022</span><em>Our toolchain</em></div>
+    <div class="tc"><div class="tc-in"><div class="tc-f">Figma</div><div class="tc-b">Sketch</div></div></div>
+    <div class="tc"><div class="tc-in"><div class="tc-f">Figma + code prototypes</div><div class="tc-b">Balsamiq + InVision</div></div></div>
+    <div class="tc"><div class="tc-in"><div class="tc-f">Kit mirrored to Figma</div><div class="tc-b">Zeplin hand-off</div></div></div>
+    <div class="tc"><div class="tc-in"><div class="tc-f">Crowdin, inside Figma</div><div class="tc-b">Transifex, Phraseapp</div></div></div>
+    <div class="tc"><div class="tc-in"><div class="tc-f"><svg class="ic"><use href="#i-spark"/></svg>Design QA agent</div><div class="tc-b">Manual UI QA</div></div></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     R1 · LISTEN: face-to-face interviews (illustrated, Cantonese)
+     ================================================================ -->
+<section class="slide" data-fx="rsListen" data-section="Design at GoGoX" data-title="We meet users where they are"
+  data-notes="(1:15) We don't interview users over a video call. We meet them where the problem happens. At home, a consumer tries to book a van for her sofa and stops on the vehicle page for eight seconds: is a van big enough? She just wants the total up front. At a shop, the owner books twenty orders every Monday to the same five addresses, and three staff share one login. Beside his van, a driver says the customer called it a sofa, it was three metres long, and he waited forty minutes unpaid before cancelling. The designer leads, the PM writes it down, and every key moment becomes a highlight. Click a tab to replay an interview. The interviews are illustrative.">
+  <div class="hd"><h2 data-split>We meet users where they are.</h2></div>
+  <div class="abs seg-tabs ls-tabs" style="right:120px;top:120px" data-ui>
+    <button data-ui data-p="0" style="width:200px"><svg class="ic"><use href="#i-user"/></svg>Consumer <i>客戶</i></button><button data-ui data-p="1" style="width:200px"><svg class="ic"><use href="#i-store"/></svg>Business <i>商戶</i></button><button data-ui data-p="2" style="width:200px"><svg class="ic"><use href="#i-wheel"/></svg>Driver <i>司機</i></button><i class="seg-knob ls-knob"></i>
+  </div>
+  <div class="abs ff-stage" style="left:120px;top:232px">
+    <svg class="ff-svg" viewBox="0 0 1220 700" aria-hidden="true"></svg>
+    <span class="ff-set"><svg class="ic"><use href="#i-pin"/></svg><b>Home visit</b><i>家訪</i></span>
+    <div class="ff-bub d"><em>設計師</em><p></p></div>
+    <div class="ff-bub p"><em>客戶</em><p></p></div>
+    <div class="ff-ins"><img alt=""><span class="ff-ins-t"><svg class="ic"><use href="#i-eye"/></svg><b></b></span></div>
+    <span class="ff-tag" data-t="m">PM</span><span class="ff-tag" data-t="d">Designer <i>設計師</i></span><span class="ff-tag p" data-t="p">Consumer <i>客戶</i></span>
+  </div>
+  <div class="abs ls-board ff-board" style="left:1380px;top:232px">
+    <div class="lb-h"><b>Highlights <i>重點</i></b><span class="lb-n">0</span></div>
+    <div class="lb-notes"></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     R2 · NOTES → INSIGHTS (wall / by user / by theme)
+     ================================================================ -->
+<section class="slide" data-fx="rsSort" data-section="Design at GoGoX" data-title="Notes become insights"
+  data-notes="(1:00) The six highlights from those interviews come with us: there they are, still in Cantonese, joining what customers and drivers tell us in CS chats, app reviews and other interviews. On their own they are just stories. [click] So we cluster them by theme. AI drafts the clusters, the designer decides what they mean. Look at the colours: the vehicle-size problem shows up for consumers and for drivers, so it is a pattern, not a story. Four insights: vehicle size is a guess, surprise fees break trust, businesses book in batches, and waiting is unpaid time. You can flip the notes by user or by theme, and click a cluster for the question we design for.">
+  <div class="hd"><h2 data-split>Notes become insights.</h2></div>
+  <div class="abs seg-tabs so-tabs" style="right:120px;top:120px" data-ui>
+    <button data-ui data-m="wall" style="width:120px">Wall</button><button data-ui data-m="user" style="width:140px">By user</button><button data-ui data-m="theme" style="width:150px">By theme</button><i class="seg-knob so-knob"></i>
+  </div>
+  <div class="abs so-leg" style="left:120px;top:200px"><span><i class="g-c"></i>Consumers <em>客戶</em></span><span><i class="g-b"></i>Businesses <em>商戶</em></span><span><i class="g-d"></i>Drivers <em>司機</em></span><span><b class="so-st-k">★</b>From our interviews <em>訪談</em></span></div>
+  <div class="abs ls-board ff-board so-ghost" style="left:1380px;top:232px"><div class="lb-h"><b>Highlights <i>重點</i></b><span class="lb-n">6</span></div></div>
+  <div class="so-regs"></div>
+  <div class="so-cols"></div>
+  <div class="so-notes"></div>
+  <i class="abs so-beam"></i>
+  <div class="abs so-ai" style="left:120px;top:850px"><span class="disc ai sm"><svg class="ic"><use href="#i-spark"/></svg></span>AI drafts the clusters.<span class="disc gate sm"><svg class="ic"><use href="#i-user"/></svg></span>The designer decides what they mean.</div>
+</section>
+
+<!-- ================================================================
+     R4 · JUDGMENT (interactive)
+     ================================================================ -->
+<section class="slide" data-fx="rsJudge" data-section="Design at GoGoX" data-title="Judgment: what we act on, and what we park"
+  data-notes="(1:00) Not every insight gets built. The four clusters we just made sit on this chart with two more from CS and app reviews. We weigh how many users hit it, how much it hurts users and the business, and how sure we are, which is the bubble size: how many sources agree. Each card keeps the users' own words in Cantonese, so we never lose what we are acting on. Then four tests: a pattern not a story, say versus do, does it move a North Star, and can we test it small. So vehicle size and surprise fees are do-now; batch booking and unpaid waiting get planned; receipts is a quick win; dark mode is parked, for now. Click any bubble for its evidence.">
+  <div class="hd"><h2 data-split>Judgment: what we act on, and what we park.</h2>
+    <p class="sub">We weigh how many users, how much it hurts, and how sure we are.</p></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="rj-ax" d="M200 340 V 880 H 1010"/>
+    <path class="rj-mid" d="M605 340 V 880 M200 610 H 1010"/>
+    <text class="svgt-sm rj-axl" x="605" y="926" text-anchor="middle">How many users hit it</text>
+    <text class="svgt-sm rj-axl" transform="translate(160 610) rotate(-90)" text-anchor="middle">How much it hurts users and the business</text>
+  </svg>
+  <div class="abs rj-q tr" style="left:902px;top:346px">Do now</div>
+  <div class="abs rj-q tl" style="left:218px;top:346px">Plan</div>
+  <div class="abs rj-q br" style="left:868px;top:836px">Quick win</div>
+  <div class="abs rj-q bl" style="left:218px;top:836px">Park</div>
+  <div class="rj-bubs"></div>
+  <div class="abs rj-size" style="left:640px;top:952px">Bubble size: how many sources agree</div>
+  <div class="abs rj-tests" style="left:1090px;top:296px;width:710px">
+    <em class="rs-lab">Four tests before we commit</em>
+    <div class="rj-t"><span class="disc sm"><svg class="ic"><use href="#i-layers"/></svg></span><p><b>A pattern, not a story.</b> Two or more sources agree.</p></div>
+    <div class="rj-t"><span class="disc sm"><svg class="ic"><use href="#i-eye"/></svg></span><p><b>Say vs do.</b> Behaviour data matches what we heard.</p></div>
+    <div class="rj-t"><span class="disc sm"><svg class="ic"><use href="#i-star"/></svg></span><p><b>Moves a North Star.</b> Orders, activation or repeat use.</p></div>
+    <div class="rj-t"><span class="disc sm"><svg class="ic"><use href="#i-flask"/></svg></span><p><b>Testable small.</b> Prototype first, then a staged release.</p></div>
+  </div>
+  <div class="abs rj-ev" style="left:1090px;top:650px;width:710px" data-ui>
+    <div class="rj-evh"><b class="rj-evt"></b><i class="rj-evz"></i><span class="rj-dec"></span></div>
+    <div class="rj-qs"></div>
+    <div class="rj-src"></div>
+    <div class="rj-mv"><svg class="ic"><use href="#i-target"/></svg><span></span></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     D3 · PM + DESIGN ON ONE FEATURE (baton)
+     ================================================================ -->
+<section class="slide" data-fx="baton" data-section="Design at GoGoX" data-title="PM and design, side by side on one feature"
+  data-notes="(1:15) So how do a PM and a designer actually work one feature? Different lanes, same room. The PM writes the problem brief and the metric, and we kick off together. Our design scope agent checks whether the PRD needs design and finds the right Figma files. We interview users together, the designer synthesises, explores flows and options while the PM makes the trade-offs, and it goes through design crit. The PRD ships with a testable prototype, and we test it together. Then handoff to engineering, tickets, design QA against Figma, a joint sign-off, and the PM owns the launch readout. Three rules: designers join discovery from day one, every PRD comes with a prototype, and design signs off before release.">
+  <div class="hd"><h2 data-split>PM and design, side by side on one feature.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="lane-ln" d="M286 420 H 1790"/><path class="lane-ln mid" d="M286 580 H 1790"/><path class="lane-ln" d="M286 740 H 1790"/>
+    <path id="bt-path" class="bt-trail" d="M0 0"/>
+    <circle class="bt-dot" r="12" opacity="0"/>
+  </svg>
+  <div class="abs bt-lab pm" style="left:120px;top:396px"><svg class="ic"><use href="#i-target"/></svg>PM</div>
+  <div class="abs bt-lab tg" style="left:120px;top:556px"><svg class="ic"><use href="#i-users"/></svg>Together</div>
+  <div class="abs bt-lab pd" style="left:120px;top:716px"><svg class="ic"><use href="#i-pen"/></svg>Design</div>
+  <div class="abs bt-stages"></div>
+  <div class="abs bt-cards"></div>
+  <div class="abs bt-rules" style="left:120px;top:868px;width:1680px">
+    <span><svg class="ic"><use href="#i-search"/></svg>Designers join discovery from day one</span>
+    <span><svg class="ic"><use href="#i-doc"/></svg>Every PRD ships with a testable prototype</span>
+    <span><svg class="ic"><use href="#i-check"/></svg>Design signs off before release</span>
+  </div>
+</section>
+
+<!-- ================================================================
+     D4 · DESIGN TOKENS → COMPONENTS → SCREEN
+     ================================================================ -->
+<section class="slide" data-fx="tokens" data-section="Design at GoGoX" data-title="Design tokens: decide once, use everywhere"
+  data-notes="(1:00) This is how the system works under the hood. Primitives are raw values, like our GoGoX blue 0088BF and yellow FFDD00. Semantic tokens give them a job: action primary, selected border, text default. Components only ever use semantic tokens. And screens are built from components. Watch each chain light up: the blue becomes the primary action, which becomes the Next button. The yellow becomes the selected state, which is that yellow frame you saw on the vehicle card in the real app.">
+  <div class="hd"><h2 data-split>Design tokens: decide once, use everywhere.</h2></div>
+  <svg class="ov tk-ov" viewBox="0 0 1920 1080"><g class="tk-links"></g><g class="tk-hots"></g></svg>
+  <div class="abs tk-colh" style="left:120px">Primitives</div>
+  <div class="abs tk-colh" style="left:560px">Semantic tokens</div>
+  <div class="abs tk-colh" style="left:1010px">Components</div>
+  <div class="abs tk-colh" style="left:1452px">Screen</div>
+  <div class="abs tk-prims" style="left:120px;top:332px;width:360px">
+    <div class="pr" data-c="a"><i style="background:#0088BF"></i><b>blue-500</b><span>#0088BF</span></div>
+    <div class="pr"><i style="background:#006E9B"></i><b>blue-700</b><span>#006E9B</span></div>
+    <div class="pr" data-c="b"><i style="background:#FFDD00"></i><b>yellow-400</b><span>#FFDD00</span></div>
+    <div class="pr" data-c="d"><i style="background:#00121A"></i><b>navy-900</b><span>#00121A</span></div>
+    <div class="pr"><i style="background:#F3F7F8;box-shadow:inset 0 0 0 1px #C9D2DA"></i><b>grey-50</b><span>#F3F7F8</span></div>
+    <div class="pr" data-c="c"><i style="background:#E3E7EC"></i><b>grey-200</b><span>#E3E7EC</span></div>
+    <div class="pr"><i style="background:#D9534F"></i><b>red-500</b><span>#D9534F</span></div>
+    <div class="pr-shapes"><span class="sh r8">8</span><span class="sh r12">12</span><span class="sh r16">16</span><span class="sh pill">pill</span></div>
+  </div>
+  <div class="abs tk-sems" style="left:560px;top:332px;width:360px">
+    <div class="se" data-c="a"><b>action / primary</b><i style="background:#0088BF"></i></div>
+    <div class="se"><b>action / pressed</b><i style="background:#006E9B"></i></div>
+    <div class="se" data-c="b"><b>selected / border</b><i style="background:#FFDD00"></i></div>
+    <div class="se" data-c="d"><b>text / default</b><i style="background:#00121A"></i></div>
+    <div class="se"><b>surface / subtle</b><i style="background:#F3F7F8;box-shadow:inset 0 0 0 1px #C9D2DA"></i></div>
+    <div class="se" data-c="c"><b>border / default</b><i style="background:#E3E7EC"></i></div>
+    <div class="se"><b>status / error</b><i style="background:#D9534F"></i></div>
+    <div class="se"><b>radius / button</b><em>pill</em></div>
+  </div>
+  <div class="abs tk-comps" style="left:1010px;top:332px;width:380px">
+    <div class="cp" data-c="c"><div class="k-input"><i></i>落貨點</div><em>Input</em></div>
+    <div class="cp" data-c="b"><div class="k-card sel"><span class="k-ic"><svg class="ic"><use href="#i-van"/></svg></span><div><b>貨Van</b><span>5.5 × 4 × 4 呎</span></div><strong>$55</strong><i class="k-tick"><svg class="ic"><use href="#i-check"/></svg></i></div><em>Vehicle card</em></div>
+    <div class="cp" data-c="d"><span class="k-chip">尊尚貨Van +$20</span><em>Chip</em></div>
+    <div class="cp" data-c="a"><span class="k-btn">下一步</span><em>Button</em></div>
+  </div>
+  <div class="abs tk-screen" style="left:1452px;top:322px"><div class="mk-host" data-mock></div></div>
+</section>
+
+<!-- ================================================================
+     D5 · CHANGE A TOKEN, EVERY SCREEN FOLLOWS (theme + language)
+     ================================================================ -->
+<section class="slide" data-fx="theme" data-section="Design at GoGoX" data-title="Change a token, every screen follows"
+  data-notes="(1:00) And here is why it's worth it. Same screen, same components. Change the tokens and it becomes Amigo's purple and magenta, or dark mode, without redrawing a single screen. Switch the language keys and it's in Traditional Chinese. On the right are the real screens in production: GoGoX and Amigo, two brands, one team and one system. Tap the buttons to try it.">
+  <div class="hd"><h2 data-split>Change a token. Every screen follows.</h2></div>
+  <div class="abs th-ctl" style="left:120px;top:236px" data-ui>
+    <span class="ctl-l">Theme</span>
+    <div class="seg-tabs th-themes" data-ui><button data-ui data-t="gogox" style="width:120px" class="on">GoGoX</button><button data-ui data-t="amigo" style="width:120px">Amigo</button><button data-ui data-t="dark" style="width:120px">Dark</button><i class="seg-knob th-knob"></i></div>
+    <span class="ctl-l">Language</span>
+    <div class="seg-tabs th-langs" data-ui><button data-ui data-l="en" style="width:90px" class="on">EN</button><button data-ui data-l="zh" style="width:90px">繁中</button><i class="seg-knob th-lknob"></i></div>
+  </div>
+  <div class="abs th-phone" style="left:120px;top:320px"><div class="mk-host" data-mock></div></div>
+  <div class="abs th-tokens" style="left:530px;top:330px;width:420px">
+    <div class="tt-h">Semantic tokens</div>
+    <div class="tt" data-k="action"><b>action / primary</b><i></i><span>#0088BF</span></div>
+    <div class="tt" data-k="selected"><b>selected / border</b><i></i><span>#FFDD00</span></div>
+    <div class="tt" data-k="surface"><b>surface / default</b><i></i><span>#FFFFFF</span></div>
+    <div class="tt" data-k="subtle"><b>surface / subtle</b><i></i><span>#F3F7F8</span></div>
+    <div class="tt" data-k="text"><b>text / default</b><i></i><span>#00121A</span></div>
+    <div class="tt" data-k="radius"><b>radius / card</b><i class="rad"></i><span>16 px</span></div>
+    <div class="tt" data-k="lang"><b>copy / locale</b><i class="lng">Aa</i><span>en-HK</span></div>
+  </div>
+  <div class="abs th-real" style="left:1030px;top:300px;width:770px">
+    <div class="tr-h">In production</div>
+    <figure class="tr-shot ggx"><img src="img/app-client-vehicle.jpg" alt="GoGoX client app" data-zoom="GoGoX client app, in production" data-ui><figcaption><img src="img/icon-client.jpg" alt="">GoGoX client app</figcaption></figure>
+    <figure class="tr-shot ami"><img src="img/app-amigodriver-offer.jpg" alt="Amigo driver app" data-zoom="Amigo driver app, in production" data-ui><figcaption><img src="img/icon-amigo.jpg" alt="">Amigo taxi</figcaption></figure>
+  </div>
+</section>
+
+<!-- ================================================================
+     12 · DIVIDER 3
+     ================================================================ -->
+<section class="slide dark divider" data-fx="divider" data-stop="4" data-title="Part 4: AI changes the job"
+  data-notes="(0:10) Part four, the main event: how AI is changing the job.">
+  <div class="abs" style="left:120px;top:236px;width:1500px">
+    <div class="div-num">04</div>
+    <h2 class="div-title" data-split>AI changes the job</h2>
+    <p class="div-sub">From assistants to agents, and what that does to our roles</p>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="d3-road" class="road d-road" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <path class="road-dash d-dash" d="M-60 880 C 320 880 420 820 720 820 S 1180 900 1480 860 S 1800 800 1980 800"/>
+    <g class="d-pin done" data-on="d3-road" data-at=".2"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Team</text></g></g>
+    <g class="d-pin done" data-on="d3-road" data-at=".4"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Ways of working</text></g></g>
+    <g class="d-pin done" data-on="d3-road" data-at=".6"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">Design</text></g></g>
+    <g class="d-pin now" data-on="d3-road" data-at=".8"><g class="pin-in"><circle class="ring" r="16"/><circle class="pin-o" r="16"/><circle class="pin-f" r="7"/><text class="svgt-pin" y="60" text-anchor="middle">AI</text></g></g>
+    <use class="d-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+</section>
+
+<!-- ================================================================
+     13 · THE LADDER (click builds)
+     ================================================================ -->
+<section class="slide" data-fx="ladder" data-section="AI changes the job" data-title="From AI that assists to AI that acts"
+  data-notes="(1:15) We think of it as four steps. [click] Assist: AI answers when you ask. [click] Augment: AI drafts, you edit. [click] Automate: we design the steps, AI does part of the work, like our triage sweep. [click] Agent: you give it a goal, tools and limits, and it picks its own next step. We self-rate at about 70% augmented and 30% AI-native: moving from step three to step four.">
+  <div class="hd"><h2 data-split>From AI that assists to AI that acts.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="ld-fill" d="M140 920 V 880 H 570 V 790 H 980 V 700 H 1390 V 610 H 1800 V 920 Z"/>
+    <path id="ld-path" class="ld-path" d="M140 880 H 570 V 790 H 980 V 700 H 1390 V 610 H 1800"/>
+    <g class="ld-climber"><circle class="cl-halo" r="30"/><circle class="cl-body" r="20"/><use href="#i-user" x="-11" y="-12" width="22" height="22" class="cl-ic"/></g>
+  </svg>
+  <div class="abs ld-step" style="left:170px;top:624px;width:380px">
+    <div class="ld-top"><span class="ld-n">1</span><b>Assist</b></div><p>AI answers when asked.</p>
+    <span class="ld-ex"><svg class="ic"><use href="#i-chat"/></svg>Copy, translation, quick research</span>
+    <span class="who human"><svg class="ic"><use href="#i-user"/></svg>You do every step</span>
+  </div>
+  <div class="abs ld-step" style="left:580px;top:534px;width:380px">
+    <div class="ld-top"><span class="ld-n">2</span><b>Augment</b></div><p>AI drafts. You edit.</p>
+    <span class="ld-ex"><svg class="ic"><use href="#i-doc"/></svg>PRD and spec drafts, design options</span>
+    <span class="who human"><svg class="ic"><use href="#i-user"/></svg>You edit every draft</span>
+  </div>
+  <div class="abs ld-step" style="left:990px;top:444px;width:380px">
+    <div class="ld-top"><span class="ld-n">3</span><b>Automate</b></div><p>We design the steps. AI does part of the work.</p>
+    <span class="ld-ex"><svg class="ic"><use href="#i-clock"/></svg>Triage sweep every 2 hours</span>
+    <span class="who rules"><svg class="ic"><use href="#i-sliders"/></svg>Rules pick the next step</span>
+  </div>
+  <div class="abs ld-step" style="left:1400px;top:354px;width:390px">
+    <div class="ld-top"><span class="ld-n ai">4</span><b>Agent</b></div><p>Give it a goal, tools and limits. It picks the next step.</p>
+    <span class="ld-ex"><svg class="ic"><use href="#i-bug"/></svg>Finds and fixes chatbot bugs</span>
+    <span class="who ai"><svg class="ic"><use href="#i-spark"/></svg>AI picks the next step</span>
+  </div>
+  <div class="abs ld-here" style="left:1430px;top:720px">
+    <span class="here-pin"></span>
+    <div><b>We are here</b><span>Self-rated: 70% augmented,<br>30% AI-native</span></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     14 · AUTOMATION VS AGENT
+     ================================================================ -->
+<section class="slide" data-fx="autoagent" data-section="AI changes the job" data-title="Automation follows our steps, agents choose theirs"
+  data-notes="(1:00) The difference matters. Automation follows our steps: every two hours our triage sweep checks the queues, proposes fields, and a PM gives the verdict. Same path, every time. An agent chooses its own path: it reads the chats, finds a cause, writes a fix, a test fails, so it goes back, reads the logs, tries again, proves it on live orders. Both of them end at a human.">
+  <div class="hd"><h2 data-split>Automation follows our steps.<br>Agents choose their own.</h2></div>
+  <div class="abs aa-panel" style="left:120px;top:330px;width:810px;height:600px">
+    <div class="aa-h"><b>AI automation</b><span>We design the steps. AI fills in part.</span></div>
+    <div class="aa-ex">Example: triage sweep</div>
+    <div class="aa-rules"><div><i>Fixed</i>schedule, steps, output</div><div><i class="ai">AI decides</i>the proposed values</div></div>
+  </div>
+  <div class="abs aa-panel" style="left:990px;top:330px;width:810px;height:600px">
+    <div class="aa-h"><b>AI agent</b><span>We set the goal, tools and limits. AI picks the path.</span></div>
+    <div class="aa-ex">Example: chatbot bug fixing</div>
+    <div class="aa-rules"><div><i>Fixed</i>goal, tools, limits, tests</div><div><i class="ai">AI decides</i>what to read, the cause, the fix, when to retry</div></div>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <!-- automation rail -->
+    <path class="rail" d="M200 640 H 850"/>
+    <g class="aa-st" transform="translate(220 640)"><circle class="st-o" r="30"/><use href="#i-clock" x="-14" y="-14" width="28" height="28" class="st-ic"/><text class="svgt-sm" y="66" text-anchor="middle">Every 2 hours</text></g>
+    <g class="aa-st" transform="translate(420 640)"><circle class="st-o" r="30"/><use href="#i-search" x="-14" y="-14" width="28" height="28" class="st-ic"/><text class="svgt-sm" y="66" text-anchor="middle">Check queues</text></g>
+    <g class="aa-st" transform="translate(620 640)"><circle class="st-o ai" r="30"/><use href="#i-spark" x="-14" y="-14" width="28" height="28" class="st-ic ai"/><text class="svgt-sm" y="66" text-anchor="middle">Propose fields</text></g>
+    <g class="aa-st" transform="translate(820 640)"><circle class="st-o gate" r="30"/><use href="#i-person-check" x="-14" y="-14" width="28" height="28" class="st-ic gate"/><text class="svgt-sm" y="66" text-anchor="middle">PM verdict</text></g>
+    <circle class="aa-dot1" cx="0" cy="0" r="10" opacity="0"/>
+    <!-- agent graph -->
+    <g class="ag-edges">
+      <path d="M1075 640 L1215 545"/><path d="M1075 640 L1215 735"/>
+      <path d="M1215 545 L1365 640"/><path d="M1215 735 L1365 640"/>
+      <path d="M1365 640 L1520 545"/><path d="M1520 545 L1520 735"/>
+      <path class="retry" d="M1520 735 C 1470 800 1400 760 1365 640"/>
+      <path d="M1520 735 L1690 640"/><path d="M1690 640 L1690 760"/>
+    </g>
+  </svg>
+  <div class="abs ag-node" data-n="S" style="left:1010px;top:614px">Bug report</div>
+  <div class="abs ag-node" data-n="A" style="left:1150px;top:519px">Read chats</div>
+  <div class="abs ag-node" data-n="B" style="left:1150px;top:709px">Read logs</div>
+  <div class="abs ag-node" data-n="C" style="left:1300px;top:614px">Find cause</div>
+  <div class="abs ag-node" data-n="D" style="left:1455px;top:519px">Write fix</div>
+  <div class="abs ag-node" data-n="E" style="left:1455px;top:709px">Run tests</div>
+  <div class="abs ag-node" data-n="G" style="left:1625px;top:614px">Prove live</div>
+  <div class="abs ag-node gate" data-n="H" style="left:1612px;top:734px;width:156px">Owner publishes</div>
+  <div class="abs ag-badge bad" style="left:1563px;top:690px"><svg class="ic"><use href="#i-x"/></svg></div>
+  <div class="abs ag-badge ok" style="left:1563px;top:690px"><svg class="ic"><use href="#i-check"/></svg></div>
+  <div class="abs ag-dot"></div>
+</section>
+
+<!-- ================================================================
+     16 · ROLES MERGING (Before / Now)
+     ================================================================ -->
+<section class="slide" data-fx="roles" data-section="AI changes the job" data-title="The lines between PM, design and engineering are blurring"
+  data-notes="(1:00) This is the biggest change for our people. Before: classic handoffs. The PM writes the spec, the designer draws the screens, engineering builds, QA tests, an analyst pulls the numbers. [click] Now the lines blur. Designers fix UI bugs in code and run our website. A PM built and shipped a WeChat mini program. PMs query data themselves. Agents test every ticket. People keep the judgment.">
+  <div class="hd"><h2 data-split>The lines between PM, design<br>and engineering are blurring.</h2></div>
+  <div class="abs rl-toggle" style="right:120px;top:120px" data-ui>
+    <button data-ui data-k="0">Before</button><button data-ui data-k="1">Now</button><i class="rl-knob"></i>
+  </div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <g class="rl-hand">
+      <path class="hand" d="M440 630 H 530"/><path class="hand" d="M750 630 H 840"/><path class="hand" d="M1060 630 H 1150"/><path class="hand" d="M1370 630 H 1460"/>
+      <text class="svgt-xs" x="485" y="612" text-anchor="middle">handoff</text><text class="svgt-xs" x="795" y="612" text-anchor="middle">handoff</text>
+      <text class="svgt-xs" x="1105" y="612" text-anchor="middle">handoff</text><text class="svgt-xs" x="1415" y="612" text-anchor="middle">handoff</text>
+    </g>
+    <circle class="rl-orbit" cx="960" cy="630" r="300"/>
+  </svg>
+  <!-- natural positions = NOW; data-bx/by/bs = offset + scale for BEFORE -->
+  <div class="abs rl-c pm" data-bx="-560" data-by="60" data-bs=".707" style="left:750px;top:430px"><div class="rl-in"><b>PM</b><span class="b4">writes the spec</span></div></div>
+  <div class="abs rl-c pd" data-bx="-390" data-by="60" data-bs=".707" style="left:890px;top:430px"><div class="rl-in"><b>Design</b><span class="b4">draws the screens</span></div></div>
+  <div class="abs rl-c eng" data-bx="-10" data-by="-60" data-bs=".707" style="left:820px;top:550px"><div class="rl-in"><b>Engineering</b><span class="b4">builds it</span></div></div>
+  <div class="abs rl-core" style="left:810px;top:560px;width:300px;height:100px"><b>Product builders</b></div>
+  <div class="abs rl-sat qa" data-bx="559.8" data-by="-150" data-bs="1.523" data-a="150" style="left:635.2px;top:715px"><div class="rl-orb"><div class="rl-in"><i class="bg-ai"></i><svg class="ic sat-ic"><use href="#i-spark"/></svg><b>QA</b><span class="b4">tests it</span><span class="n4">agent</span></div></div></div>
+  <div class="abs rl-sat da" data-bx="350.2" data-by="150" data-bs="1.523" data-a="-30" style="left:1154.8px;top:415px"><div class="rl-orb"><div class="rl-in"><i class="bg-ai"></i><svg class="ic sat-ic"><use href="#i-spark"/></svg><b>Data</b><span class="b4">pulls the numbers</span><span class="n4">agent</span></div></div></div>
+  <div class="abs rl-chips l" style="left:120px;top:330px;width:465px">
+    <div class="rl-chip"><span class="disc sm pd"><svg class="ic"><use href="#i-code"/></svg></span><p>Designers fix UI bugs in code. Devs review the PR.</p></div>
+    <div class="rl-chip"><span class="disc sm pd"><svg class="ic"><use href="#i-web"/></svg></span><p>Designers run gogox.com without a web developer.</p></div>
+    <div class="rl-chip"><span class="disc sm pd"><svg class="ic"><use href="#i-flag"/></svg></span><p>Designers act as product owners for two areas.</p></div>
+  </div>
+  <div class="abs rl-chips r" style="left:1335px;top:330px;width:465px">
+    <div class="rl-chip"><span class="disc sm pm"><svg class="ic"><use href="#i-phone"/></svg></span><p>A PM built and shipped a WeChat mini program.</p></div>
+    <div class="rl-chip"><span class="disc sm pm"><svg class="ic"><use href="#i-chart"/></svg></span><p>PMs query the data themselves, with analyst agents.</p></div>
+    <div class="rl-chip"><span class="disc sm ai"><svg class="ic"><use href="#i-flask"/></svg></span><p>Agents test every ticket. QA signs off high-risk.</p></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     17 · THE NEW ROUTE
+     ================================================================ -->
+<section class="slide" data-fx="newroute" data-section="AI changes the job" data-title="An agent at every stop, a human at every gate"
+  data-notes="(1:00) Back to our route. Same stops, but now there is an agent at every stop, and a human at every gate. Triage every two hours, PRD drafts with a suggested prototype, prototype builders, a ticket agent that checks for duplicates, a decision agent that answers dev questions, design QA against Figma, an end-to-end test agent, and a launch readout. Most are live; dashed ones are in pilot. And the yellow gates never move: priorities, promises, prices and go or no-go stay human.">
+  <div class="hd"><h2 data-split>An agent at every stop.<br>A human at every gate.</h2></div>
+  <div class="abs nr-legend" style="right:120px;top:120px"><span><i class="lg-ai"></i>Agent or automation</span><span><i class="lg-pilot"></i>Pilot</span><span><i class="lg-gate"></i>Human gate</span></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="nr-road" class="road nr-road" d="M130 600 H 1790"/>
+    <path class="road-dash" d="M130 600 H 1790"/>
+    <g class="nr-ticks"></g>
+    <g class="nr-gates"></g>
+    <g class="nr-tk-g" transform="translate(130 600)"><rect class="nr-tk" x="-22" y="-15" width="44" height="30" rx="7"/><path class="nr-tk-l" d="M-10 -4 H 10 M-10 4 H 4"/></g>
+  </svg>
+  <div class="abs nr-badges"></div>
+  <div class="abs nr-labels"></div>
+  <div class="abs nr-human" style="left:120px;top:868px;width:1680px">
+    <span class="disc gate"><svg class="ic"><use href="#i-person-check"/></svg></span>
+    <b>Always human:</b> priorities, promises, prices, and go or no-go.
+  </div>
+</section>
+
+<!-- ================================================================
+     AUTONOMY LEVELS · borrowed from self-driving cars (SAE L0–L4)
+     ================================================================ -->
+<section class="slide" data-fx="autonomy" data-section="AI changes the job" data-title="Autonomy levels, borrowed from self-driving cars"
+  data-notes="(1:15) How much do we let agents do on their own? We borrowed the self-driving scale, because everyone knows it from cars. L0: you drive, everything by hand. L1: driver assistance, like adaptive cruise control keeping the gap; for us, AI suggests copy and translations. L2: the car keeps its lane and speed but you watch every second; for us, AI drafts PRDs, design options and metric queries, and the PM checks every line. L3: a traffic-jam pilot, you can look away but must take over when it asks; for us, the triage sweep, ticket agent and design QA. L4: a robotaxi with no driver, but only inside a set area; for us, the chatbot fix loop and the Amigo decision and test agents, inside guardrails. Most of our work sits at L2 and L3, with a few agents at L4, and we stop there on purpose: people keep the judgment. And autonomy is earned: four weeks at 95 percent accepted to move up a level, one serious error to drop back.">
+  <div class="hd"><h2 data-split>Autonomy levels, borrowed from self-driving cars.</h2>
+    <p class="sub">Most of our work runs at L2–L3. A few agents drive alone, inside a fenced zone.</p></div>
+  <div class="abs sae-row" style="left:120px;top:234px;width:1680px"><div class="sae l0"><div class="sae-ill"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><rect width="280" height="150" fill="#CDEAF7"/><rect y="34" width="280" height="12" fill="#A8D5A2"/><polygon points="118,40 162,40 262,150 18,150" fill="#6B7780"/><path class="l0-dash" d="M140 42 V150" stroke="#fff" stroke-width="4" stroke-dasharray="10 12"/><path d="M0 112 Q140 84 280 112 V150 H0Z" fill="#26343E"/><g class="l0-wheel"><circle cx="140" cy="124" r="34" fill="none" stroke="#1F2A33" stroke-width="9"/><path d="M106 124 H174 M140 124 V158" stroke="#1F2A33" stroke-width="7"/><circle cx="140" cy="124" r="9" fill="#1F2A33"/><circle cx="110" cy="110" r="10" fill="#E8B38C"/><circle cx="170" cy="110" r="10" fill="#E8B38C"/></g></svg><span class="sae-car"><svg class="ic"><use href="#i-taxi"/></svg>Manual driving</span></div>
+      <div class="sae-top"><b>L0</b><strong>No automation</strong></div><span class="sae-who"><svg class="ic"><use href="#i-wheel"/></svg>You drive</span><p><i>In product</i>Specs, tickets and QA, all by hand</p></div><div class="sae l1"><div class="sae-ill"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><rect width="280" height="150" fill="#6B7780"/><rect width="280" height="20" fill="#9FCF9A"/><rect y="130" width="280" height="20" fill="#9FCF9A"/><path d="M0 22 H280 M0 128 H280" stroke="#fff" stroke-width="3"/><path class="l1-dash" d="M0 75 H300" stroke="#fff" stroke-width="3" stroke-dasharray="14 12"/><g transform="translate(70 47)"><circle r="18" fill="#fff"/><text text-anchor="middle" y="5" font-size="14" font-weight="800" fill="#00121A" font-family="Figtree,sans-serif">80</text></g><g class="l1-lead" transform="translate(180 101)"><rect x="-23" y="-12" width="46" height="24" rx="7" fill="#9AA7B0"/><rect x="4" y="-9" width="10" height="18" rx="3" fill="#CFEFFC"/><rect x="-17" y="-9" width="8" height="18" rx="3" fill="#CFEFFC" opacity=".75"/></g><g class="l1-me" transform="translate(88 101)"><rect x="-23" y="-12" width="46" height="24" rx="7" fill="#0088BF"/><rect x="4" y="-9" width="10" height="18" rx="3" fill="#CFEFFC"/><rect x="-17" y="-9" width="8" height="18" rx="3" fill="#CFEFFC" opacity=".75"/><g class="l1-waves"><path d="M30 -9 Q36 0 30 9" stroke="#FFDD00" stroke-width="3" fill="none"/><path d="M40 -14 Q49 0 40 14" stroke="#FFDD00" stroke-width="3" fill="none"/><path d="M50 -19 Q62 0 50 19" stroke="#FFDD00" stroke-width="3" fill="none"/></g></g></svg><span class="sae-car"><svg class="ic"><use href="#i-taxi"/></svg>Adaptive cruise control</span></div>
+      <div class="sae-top"><b>L1</b><strong>Driver assistance</strong></div><span class="sae-who"><svg class="ic"><use href="#i-spark"/></svg>You drive, AI helps</span><p><i>In product</i>Copy and translation suggestions</p></div><div class="sae l2"><div class="sae-ill"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><rect width="280" height="150" fill="#9FCF9A"/><rect x="66" width="118" height="150" fill="#6B7780"/><path class="l2-lane" d="M74 0 V150" stroke="#fff" stroke-width="4"/><path class="l2-lane r" d="M176 0 V150" stroke="#fff" stroke-width="4"/><path class="l2-dash" d="M125 -24 V150" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-dasharray="12 12"/><g class="l2-car" transform="translate(125 86)"><g transform="rotate(-90)"><rect x="-23" y="-12" width="46" height="24" rx="7" fill="#0088BF"/><rect x="4" y="-9" width="10" height="18" rx="3" fill="#CFEFFC"/><rect x="-17" y="-9" width="8" height="18" rx="3" fill="#CFEFFC" opacity=".75"/></g></g><g transform="translate(207 56)"><path d="M-14 0 Q0 -11 14 0 Q0 11 -14 0Z" fill="#fff" stroke="#1F2A33" stroke-width="2.5"/><circle r="4" fill="#1F2A33"/></g><g class="l2-wheel"><circle cx="207" cy="112" r="16" fill="#fff" stroke="#1F2A33" stroke-width="5"/><path d="M191 112 H223 M207 112 V128" stroke="#1F2A33" stroke-width="4"/></g><circle cx="193" cy="94" r="6" fill="none" stroke="#E8B38C" stroke-width="2.5" stroke-dasharray="3 3"/><circle cx="221" cy="94" r="6" fill="none" stroke="#E8B38C" stroke-width="2.5" stroke-dasharray="3 3"/></svg><span class="sae-car"><svg class="ic"><use href="#i-taxi"/></svg>Lane keeping + cruise</span></div>
+      <div class="sae-top"><b>L2</b><strong>Partial automation</strong></div><span class="sae-who"><svg class="ic"><use href="#i-eye"/></svg>AI steers, you watch</span><p><i>In product</i>PRD drafts, design options, metric queries</p></div><div class="sae l3"><div class="sae-ill"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><rect width="280" height="150" fill="#CDEAF7"/><rect y="34" width="280" height="12" fill="#A8D5A2"/><polygon points="118,40 162,40 262,150 18,150" fill="#6B7780"/><g class="l3-cars"><rect x="121" y="47" width="38" height="20" rx="5" fill="#E07A5F"/><rect x="125" y="61" width="8" height="4" rx="1" fill="#C0392B" class="l3-bl"/><rect x="147" y="61" width="8" height="4" rx="1" fill="#C0392B" class="l3-bl"/><rect x="100" y="70" width="80" height="36" rx="9" fill="#8D99A6"/><rect x="106" y="96" width="14" height="6" rx="2" fill="#C0392B" class="l3-bl"/><rect x="160" y="96" width="14" height="6" rx="2" fill="#C0392B" class="l3-bl"/></g><path d="M0 112 Q140 84 280 112 V150 H0Z" fill="#26343E"/><g class="l3-wheel"><circle cx="140" cy="124" r="34" fill="none" stroke="#1F2A33" stroke-width="9"/><path d="M106 124 H174 M140 124 V158" stroke="#1F2A33" stroke-width="7"/><circle cx="140" cy="124" r="9" fill="#1F2A33"/></g><g class="l3-hands" opacity="0"><circle cx="110" cy="110" r="10" fill="#E8B38C"/><circle cx="170" cy="110" r="10" fill="#E8B38C"/></g><g class="l3-phone"><rect x="186" y="92" width="34" height="54" rx="6" fill="#1F2A33"/><rect x="190" y="97" width="26" height="42" rx="3" fill="#8FD0EC"/><rect x="193" y="102" width="20" height="4" rx="2" fill="#fff"/><rect x="193" y="110" width="14" height="4" rx="2" fill="#fff"/><circle cx="218" cy="144" r="13" fill="#E8B38C"/></g><g class="l3-alert" opacity="0"><rect x="84" y="8" width="112" height="26" rx="13" fill="#FFDD00"/><text x="140" y="26" text-anchor="middle" font-size="13" font-weight="800" fill="#00121A" font-family="Figtree,sans-serif">Take over?</text></g></svg><span class="sae-car"><svg class="ic"><use href="#i-taxi"/></svg>Traffic-jam pilot</span></div>
+      <div class="sae-top"><b>L3</b><strong>Conditional automation</strong></div><span class="sae-who"><svg class="ic"><use href="#i-person-check"/></svg>AI drives, you take over</span><p><i>In product</i>Triage, ticket agent, design QA</p></div><div class="sae l4"><div class="sae-ill"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><rect width="280" height="150" fill="#E3E9ED"/><g stroke="#fff" stroke-width="11"><path d="M0 40 H280 M0 110 H280 M68 0 V150 M140 0 V150 M212 0 V150"/></g><rect class="l4-fence" x="54" y="20" width="172" height="110" rx="18" fill="rgba(0,136,191,.10)" stroke="#0088BF" stroke-width="3" stroke-dasharray="7 6"/><path id="l4-loop" d="M68 40 H212 V110 H68 Z" fill="none"/><g class="l4-taxi"><rect x="-23" y="-12" width="46" height="24" rx="7" fill="#0088BF"/><rect x="4" y="-9" width="10" height="18" rx="3" fill="#CFEFFC"/><rect x="-17" y="-9" width="8" height="18" rx="3" fill="#CFEFFC" opacity=".75"/><circle class="l4-ring" r="12" fill="none" stroke="#FFDD00" stroke-width="2.5"/><circle r="5" fill="#fff" stroke="#1F2A33" stroke-width="2"/></g></svg><span class="sae-car"><svg class="ic"><use href="#i-taxi"/></svg>Robotaxi in a set area</span></div>
+      <div class="sae-top"><b>L4</b><strong>High automation</strong></div><span class="sae-who"><svg class="ic"><use href="#i-shield"/></svg>AI drives alone, in a zone</span><p><i>In product</i>Chatbot fix loop, Amigo decision and test agents</p></div></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path class="road sae-road" d="M140 800 H 1790"/>
+    <path class="road-dash sae-dash" d="M140 800 H 1790"/>
+    <rect class="sae-fence" x="1505" y="748" width="266" height="104" rx="26"/>
+    <g class="sae-tick" transform="translate(282 800)"><circle r="10"/></g><g class="sae-tick" transform="translate(621 800)"><circle r="10"/></g><g class="sae-tick" transform="translate(960 800)"><circle r="10"/></g><g class="sae-tick" transform="translate(1299 800)"><circle r="10"/></g><g class="sae-tick" transform="translate(1638 800)"><circle r="10"/></g>
+    <g class="sae-main" transform="translate(1100 800)"><use class="van" href="#g-van" x="-48" y="-56" width="96" height="60"/></g>
+    <g class="sae-agent" transform="translate(1638 800)"><use class="van" href="#g-van" x="-34" y="-42" width="68" height="42"/><circle class="sae-err" r="46"/></g>
+  </svg>
+  <div class="abs sae-lab main" style="left:1100px;top:698px">Most of our work</div>
+  <div class="abs sae-lab agent" style="left:1638px;top:714px">A few agents</div>
+  <div class="abs sae-fenl" style="left:1638px;top:858px">Fenced zone = our guardrails</div>
+  <div class="abs sae-pips" style="left:1299px;top:714px"><i>W1</i><i>W2</i><i>W3</i><i>W4</i></div>
+  <div class="abs sae-errl" style="left:1638px;top:716px"><svg class="ic"><use href="#i-alert"/></svg>Serious error</div>
+  <div class="abs sae-rule" style="left:120px;top:898px;width:1680px">
+    <span class="disc gate sm"><svg class="ic"><use href="#i-loop"/></svg></span>
+    <p><b>Earned, not given.</b> An agent moves up a level after 4 weeks at 95%+ accepted, and drops back after one serious error.</p>
+    <em>Levels adapted from SAE J3016</em>
+  </div>
+</section>
+
+<!-- ================================================================
+     WA-1 · THE WHATSAPP BOT FROM THE CUSTOMER'S SIDE (Cantonese, 3 scenarios)
+     ================================================================ -->
+<section class="slide" data-fx="waChat" data-section="AI changes the job" data-title="Book a van in one WhatsApp chat"
+  data-notes="(1:15) Before the self-improving part, here is what the bot actually does. Customers message our WhatsApp in Cantonese, often as a voice note. Booking: 'I need a van now, Kwun Tong to Central, a few boxes.' The AI turns the voice note into text and fills in what it understood, in blue. Our booking flow then asks only for what is missing: cargo length, the pickup pin, helpers. The price always comes from our pricing system, never from the AI. She sees a full summary and nothing is placed until she taps confirm. Then the order goes in and a driver is matched. Second tab: 'why no driver yet?' The bot finds the order from her number and, by a fixed rule, offers a rush fee. Third tab: a complaint with a photo. Complaints are never a bot decision. It hands the chat to our customer service team in Chatwoot with the order and photo, and a person replies in the same chat. Click a tab or any stage to jump.">
+  <div class="hd"><span class="kick">Example 1 of 2</span><h2 data-split>Book a van in one WhatsApp chat.</h2></div>
+  <div class="abs wa-phone" style="left:140px;top:224px">
+    <div class="wa-scr">
+      <div class="wa-sb"><b>10:02</b><span class="wa-sbi"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.4-2.9a3.6 3.6 0 0 0-4.8 0zM3.6 6.4a6.6 6.6 0 0 1 8.8 0l1.5-1.8a9 9 0 0 0-11.8 0zM.4 2.8a11.6 11.6 0 0 1 15.2 0" fill-rule="evenodd"/></svg><span class="wa-bat"><i></i></span></span></div>
+      <div class="wa-hd"><span class="wa-bk"></span><span class="wa-av"><svg viewBox="0 0 24.2 23.4"><use href="#g-x" width="24.2" height="23.4"/></svg></span>
+        <div class="wa-who"><b>GoGoX 香港<i class="wa-ver"></i></b><span>商業帳戶</span></div><span class="wa-hi"></span></div>
+      <div class="wa-chat"><div class="wa-feed"></div><i class="wa-tap"></i></div>
+      <div class="wa-in"><span class="wa-plus"></span><span class="wa-field"><em>訊息</em></span><span class="wa-cam"></span><span class="wa-mic"></span></div>
+    </div>
+  </div>
+  <div class="abs wa-panel" style="left:680px;top:228px;width:1120px">
+    <div class="wp-top">
+      <div class="seg-tabs wa-tabs" data-ui><button data-ui data-s="0" style="width:176px"><svg class="ic"><use href="#i-van"/></svg> Book <i>叫車</i></button><button data-ui data-s="1" style="width:176px"><svg class="ic"><use href="#i-clock"/></svg> Track <i>查單</i></button><button data-ui data-s="2" style="width:206px"><svg class="ic"><use href="#i-headset"/></svg> A person <i>轉人工</i></button><i class="seg-knob wa-knob"></i></div>
+      <span class="wp-intent"><svg class="ic"><use href="#i-spark"/></svg><span>Customer wants</span><b>—</b></span>
+    </div>
+    <div class="wp-stages" data-ui><div class="wp-rail"><i></i></div></div>
+    <div class="wp-cols">
+      <div class="wp-card wp-und"><div class="wp-ct"><span class="disc ai sm"><svg class="ic"><use href="#i-spark"/></svg></span><b>What the AI understood</b><i>理解</i></div>
+        <div class="wp-heard"><span class="wp-hi"></span><span class="wp-hw"></span><p></p></div>
+        <div class="wp-fields"></div></div>
+      <div class="wp-card wp-sys"><div class="wp-ct"><span class="disc ink sm"><svg class="ic"><use href="#i-server"/></svg></span><b>What happened</b><i>流程 · 系統</i></div>
+        <div class="wp-log"><div class="wp-log-in"></div></div></div>
+    </div>
+    <div class="wp-rules"><span><svg class="ic"><use href="#i-coins"/></svg>Prices only from our system</span><span><svg class="ic"><use href="#i-doc"/></svg>Summary before every order</span><span><svg class="ic"><use href="#i-person-check"/></svg>Complaints go to people</span><em>Illustrative chat</em></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     WA-2 · WHAT RUNS BEHIND THE CHAT (clickable flow map)
+     ================================================================ -->
+<section class="slide" data-fx="waFlow" data-section="AI changes the job" data-title="What runs behind the chat"
+  data-notes="(1:00) Behind that chat is this map. Text, a voice note, a location pin or a photo: every message goes to the AI first. The AI does two things only: works out what the customer wants, and pulls out the details. Then it hands over to one of our fixed flows: book a van, status and rush fee, or cancel. The steps inside each flow are designed by us. Every price and every order goes through our own systems, GetQuote and SubmitOrder, and the customer always has the last tap. Anything the bot should not decide, complaints, refunds, or when it is unsure, goes to a person in our Chatwoot inbox with the full chat. And every conversation, whatever happened, is scored in a daily quality report. That report is where the next slide starts. Click any box for details, or a colour to see who decides what.">
+  <div class="hd"><span class="kick">Example 1 of 2</span><h2 data-split>What runs behind the chat.</h2></div>
+  <div class="abs seg-tabs wf-tabs" style="left:120px;top:232px" data-ui><button data-ui data-s="0" style="width:176px"><svg class="ic"><use href="#i-van"/></svg> Book <i>叫車</i></button><button data-ui data-s="1" style="width:176px"><svg class="ic"><use href="#i-clock"/></svg> Track <i>查單</i></button><button data-ui data-s="2" style="width:206px"><svg class="ic"><use href="#i-headset"/></svg> A person <i>轉人工</i></button><i class="seg-knob wf-knob"></i></div>
+  <div class="abs wf-leg" style="right:120px;top:238px" data-ui><button data-ui data-k="ai"><i class="k-ai"></i>AI decides</button><button data-ui data-k="fx"><i class="k-fx"></i>Fixed by us</button><button data-ui data-k="sy"><i class="k-sy"></i>Our systems</button><button data-ui data-k="hu"><i class="k-hu"></i>A person decides</button></div>
+  <div class="wf-caps"></div>
+  <svg class="ov wf-ov" viewBox="0 0 1920 1080"><g class="wf-edges"></g><g class="wf-tok"><circle r="15" class="wf-tk"/><path d="M-7 -5 h14 v8 h-8 l-4 3.5 v-3.5 h-2z" class="wf-tki"/></g></svg>
+  <div class="wf-nodes"></div>
+  <div class="abs wf-msg" style="left:120px;top:700px"><span class="wf-mi"></span><p></p></div>
+  <div class="abs wf-pop" data-ui><div class="wf-ph"><span class="wf-pi"></span><div><b></b><span class="wf-who"></span></div></div><p></p><em></em></div>
+</section>
+
+<!-- ================================================================
+     19 · EXAMPLE 1 — CHATBOT FLYWHEEL
+     ================================================================ -->
+<section class="slide" data-fx="ex1" data-section="AI changes the job" data-title="Example 1: the chatbot that finds its own bugs"
+  data-notes="(1:15) Example one: our WhatsApp ordering bot. Behind it runs an improvement agent. It reads every chat, about two thousand a week, finds problems, writes and tests the fix. Our PM publishes it. Then the agent proves the fix on live orders and locks it in with a test: 469 tests so far. A real day: one morning the bot placed an order without showing the customer a summary first. Found in that morning's chat review, fixed and tested by noon, proven on that evening's orders, locked with a test. Time to fix went from two to four weeks down to one or two days.">
+  <div class="hd"><span class="kick">Example 1 of 2</span><h2 data-split>The chatbot that finds its own bugs.</h2></div>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <circle id="e1-ring" class="e1-ring" cx="520" cy="630" r="210"/>
+    <path id="e1-orbit" class="ghost" d="M520 420 A 210 210 0 1 1 519.9 420"/>
+    <g class="e1-st" transform="translate(520 420)"><circle class="st-o ai" r="38"/><use href="#i-eye" x="-17" y="-17" width="34" height="34" class="st-ic ai"/></g>
+    <g class="e1-st" transform="translate(720 565)"><circle class="st-o ai" r="38"/><use href="#i-search" x="-17" y="-17" width="34" height="34" class="st-ic ai"/></g>
+    <g class="e1-st" transform="translate(643 800)"><circle class="st-o ai" r="38"/><use href="#i-code" x="-17" y="-17" width="34" height="34" class="st-ic ai"/></g>
+    <g class="e1-st" transform="translate(397 800)"><circle class="st-o ai" r="38"/><use href="#i-check" x="-17" y="-17" width="34" height="34" class="st-ic ai"/></g>
+    <g class="e1-st" transform="translate(320 565)"><circle class="st-o ai" r="38"/><use href="#i-lock" x="-17" y="-17" width="34" height="34" class="st-ic ai"/></g>
+    <g class="e1-gate" transform="translate(520 840)"><rect class="gate-r" x="-26" y="-26" width="52" height="52" rx="14" transform="rotate(45)"/><use href="#i-person-check" x="-14" y="-14" width="28" height="28" class="gate-ic"/></g>
+    <circle class="e1-pk" r="12" opacity="0"/>
+  </svg>
+  <div class="abs e1-lab" style="left:410px;top:300px;width:220px;text-align:center"><b>Read every chat</b><span>about 2,000 a week</span></div>
+  <div class="abs e1-lab" style="left:774px;top:540px;width:220px"><b>Find the problem</b></div>
+  <div class="abs e1-lab" style="left:690px;top:842px;width:250px"><b>Write and test the fix</b></div>
+  <div class="abs e1-lab" style="left:100px;top:842px;width:250px;text-align:right"><b>Prove it on live orders</b></div>
+  <div class="abs e1-lab" style="left:46px;top:540px;width:220px;text-align:right"><b>Lock it with a test</b></div>
+  <div class="abs e1-gl" style="left:445px;top:888px;width:150px"><b>PM publishes</b></div>
+  <div class="abs e1-core" style="left:400px;top:568px;width:240px"><b data-count>469</b><span>tests and counting</span></div>
+
+  <div class="abs e1-chart" style="left:1080px;top:300px;width:720px">
+    <div class="ch-t">Time to fix a bot problem</div>
+    <div class="ch-row"><span class="ch-k">Before</span><div class="ch-track"><div class="ch-bar old" style="left:50%;width:50%"></div></div><span class="ch-v">2–4 weeks</span></div>
+    <div class="ch-row"><span class="ch-k">Now</span><div class="ch-track"><div class="ch-bar new" style="left:3.57%;width:3.57%"></div></div><span class="ch-v new">1–2 days</span></div>
+    <div class="ch-axis"><span style="left:0">0</span><span style="left:25%">1 wk</span><span style="left:50%">2 wks</span><span style="left:75%">3 wks</span><span style="left:100%">4 wks</span></div>
+  </div>
+  <div class="abs e1-day" style="left:1080px;top:600px;width:720px">
+    <div class="ch-t">One real day</div>
+    <div class="day-line"></div>
+    <div class="day"><i></i><em>Morning</em><p>Bot placed an order without showing a summary first</p></div>
+    <div class="day"><i></i><em>Noon</em><p>Fix written and tested</p></div>
+    <div class="day"><i></i><em>Evening</em><p>Proven on that evening's orders</p></div>
+    <div class="day"><i></i><em>After</em><p>Locked with a test, for good</p></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     20 · EXAMPLE 2 — AMIGO AGENTS
+     ================================================================ -->
+<section class="slide" data-fx="ex2" data-section="AI changes the job" data-title="Example 2: agents working with agents"
+  data-notes="(1:15) Example two, from Amigo, our taxi app. A developer's agent raises a question that needs a product decision. Our PM agent picks it up within its two-hourly scan, reads the linked tickets, checks the code and pull requests, compares competitors, and runs the decision checklist. If it agrees with the dev agent, it posts the decision itself, and the PM can override it for 24 hours. Then a test agent tests every ticket that's ready for QA: it turns the acceptance criteria into test steps, runs them twice, captures evidence and gives a verdict. Payment, pricing, dispatch and login still go to human QA.">
+  <div class="hd"><span class="kick">Example 2 of 2</span><h2 data-split>Agents working with agents.</h2>
+    <p class="sub">Amigo taxi: a dev agent asks, a PM agent decides, a test agent checks.</p></div>
+  <div class="abs e2-panel" style="left:120px;top:330px;width:820px;height:590px">
+    <div class="e2-ph"><span class="disc ai sm"><svg class="ic"><use href="#i-spark"/></svg></span><b>PM decision agent</b><span class="e2-clock"><svg viewBox="0 0 40 40" class="clk"><circle cx="20" cy="20" r="17"/><path class="clk-h" d="M20 20 V 10"/><path class="clk-m" d="M20 20 V 7"/></svg><em data-count>4</em>&nbsp;working hours, target</span></div>
+    <div class="e2-msg dev"><span class="av"><svg class="ic"><use href="#i-robot"/></svg></span><div><i>Dev agent</i><p>This needs a PM decision: option A or B?</p></div></div>
+    <div class="e2-checks">
+      <span><svg class="ic"><use href="#i-check"/></svg>Linked tickets read</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>Code and PRs checked</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>Competitors compared</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>Decision checklist passed</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>Agrees with the dev agent</span>
+    </div>
+    <div class="e2-msg pm"><span class="av ai"><svg class="ic"><use href="#i-spark"/></svg></span><div><i>PM agent</i><p>Decision: option A. Posted with the checklist result.</p></div></div>
+    <div class="e2-override"><svg class="ic"><use href="#i-person-check"/></svg>The PM can override for 24 hours<i class="ov-bar"></i></div>
+    <div class="e2-illus">Illustrative ticket</div>
+  </div>
+  <div class="abs e2-panel" style="left:980px;top:330px;width:820px;height:590px">
+    <div class="e2-ph"><span class="disc ai sm"><svg class="ic"><use href="#i-flask"/></svg></span><b>End-to-end test agent</b></div>
+    <div class="e2-phone">
+      <div class="ph-notch"></div>
+      <div class="ph-bar"></div><div class="ph-card"></div><div class="ph-row"></div><div class="ph-row s"></div><div class="ph-btn"></div>
+      <div class="ph-tap"></div>
+    </div>
+    <div class="e2-steps">
+      <span><b>1</b>Acceptance criteria to test steps</span>
+      <span><b>2</b>Runs on test builds, twice</span>
+      <span><b>3</b>Evidence captured</span>
+      <span><b>4</b>Verdict written to the ticket</span>
+    </div>
+    <div class="e2-tix">
+      <div class="tix"><span>Ready for QA</span><b>Trip history filter</b><em class="stamp ok"><svg class="ic"><use href="#i-check"/></svg>Pass</em></div>
+      <div class="tix"><span>Ready for QA, high risk</span><b>Payment flow change</b><em class="stamp gate"><svg class="ic"><use href="#i-person-check"/></svg>QA signs off</em></div>
+    </div>
+    <div class="e2-target">Target: 80%+ of tickets get a verdict within one working day</div>
+  </div>
+</section>
+
+<!-- ================================================================
+     HUMAN EDGE · do we still need PMs and designers? (click build)
+     ================================================================ -->
+<section class="slide" data-fx="human" data-section="AI changes the job" data-title="Do we still need PMs and designers?"
+  data-notes="(1:00) So, the big question. If agents can already draft, design, code, test and analyse, does an AI world still need product managers and designers? [click] Yes. But the job moves from making to deciding. Five things matter more than ever. Taste: agents make a hundred options, and we know which one is right. The right problem: choosing what to build, and what not to. Customer truth: time with drivers, shop owners and CS, the context no model has. Accountability: someone owns the promise, the price and the go or no-go. And running the agents: goals, guardrails and evals. Agents multiply what we can make. We decide what is worth making.">
+  <canvas class="sw-cv" width="2880" height="1620"></canvas>
+  <div class="hd hu-hd"><h2 data-split>Does an AI world<br>still need PMs<br>and designers?</h2>
+    <p class="sub">Agents can already draft, design, code, test and analyse.</p></div>
+  <div class="abs hu-ans" style="left:120px;top:520px;width:600px">
+    <span class="hu-yes">Yes.</span>
+    <p class="hu-move">The job moves from <s>making</s> to deciding.</p>
+  </div>
+  <div class="abs hu-punch" style="left:120px;top:812px;width:620px">
+    <span><i class="hp-ai"><svg class="ic"><use href="#i-spark"/></svg></i>Agents multiply what we can make.</span>
+    <span><i class="hp-hu"><svg class="ic"><use href="#i-user"/></svg></i>We decide what is worth making.</span>
+  </div>
+  <svg class="ov hu-ov" viewBox="0 0 1920 1080">
+    <circle class="hu-orb" cx="1290" cy="560" r="160"/>
+    <circle class="hu-orb o2" cx="1290" cy="560" r="250"/>
+    <g class="hu-links"></g>
+    <g class="hu-beams"></g>
+  </svg>
+  <div class="hu-tasks">
+    <span class="hu-task"><svg class="ic"><use href="#i-doc"/></svg>Draft a PRD</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-code"/></svg>Write code</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-flask"/></svg>Run tests</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-chat"/></svg>Translate copy</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-chart"/></svg>Analyse data</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-pen"/></svg>Generate options</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-headset"/></svg>Answer chats</span>
+    <span class="hu-task"><svg class="ic"><use href="#i-ticket"/></svg>Triage tickets</span>
+  </div>
+  <div class="abs hu-core" style="left:1190px;top:460px">
+    <div class="core-halo"></div><div class="core-halo h2"></div>
+    <div class="core-q">?</div>
+    <div class="core-h"><b>PM + PD</b><span>humans</span></div>
+  </div>
+  <div class="hu-cards">
+    <div class="hu-card" data-a="-90"><i><svg class="ic"><use href="#i-star"/></svg></i><div><b>Taste</b><p>Agents make a hundred options. We know which one is right.</p></div></div>
+    <div class="hu-card" data-a="-18"><i><svg class="ic"><use href="#i-target"/></svg></i><div><b>The right problem</b><p>Choosing what to build, and what not to build.</p></div></div>
+    <div class="hu-card" data-a="54"><i><svg class="ic"><use href="#i-users"/></svg></i><div><b>Customer truth</b><p>Time with drivers, shops and CS. Context no model has.</p></div></div>
+    <div class="hu-card" data-a="126"><i><svg class="ic"><use href="#i-shield"/></svg></i><div><b>Accountability</b><p>Someone owns the promise, the price and the go or no-go.</p></div></div>
+    <div class="hu-card" data-a="198"><i><svg class="ic"><use href="#i-sliders"/></svg></i><div><b>Running the agents</b><p>Goals, guardrails and evals. We manage the system.</p></div></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     SAME BRIEF, TWO APPS · agents only vs agents + PM + PD (click build)
+     ================================================================ -->
+<section class="slide" data-fx="compare" data-section="AI changes the job" data-title="Same brief, two apps"
+  data-notes="(1:15) What does that look like in a real product? Same brief: let Hong Kong SMEs book a van. On the left, an illustration of what agents build on their own. It is fast and it technically does everything: more than thirty features crammed onto the home screen, our colours but buzzword copy and no hierarchy, fourteen fields before you see a price, sizes in centimetres with no six-foot cargo rule, a price that may vary, and an upsell alert at every step, because someone told it to grow basket size. [click] On the right, our real client app flow, built by agents with a PM and a designer: three clear services, one job per screen, Hong Kong's fleet and units, a price on every option with cargo cover tiers and a ninety-dollar estimate before you order, and extras that stay optional. Both were fast to build. Only one is easy to trust. Click any row to jump to it.">
+  <div class="hd"><h2 data-split>Same brief. Two apps.</h2>
+    <p class="sub">Brief: let Hong Kong SMEs book a van. Left: an illustrative agents-only app. Right: our real client app flow.</p></div>
+  <div class="abs cm-head l" style="left:560px;top:250px;width:290px"><span class="cm-tag ai"><svg class="ic"><use href="#i-spark"/></svg>Agents only</span></div>
+  <div class="abs cm-head r" style="left:1070px;top:250px;width:290px"><span class="cm-tag ai"><svg class="ic"><use href="#i-spark"/></svg>Agents</span><span class="cm-tag hu">+ PM + PD</span></div>
+  <div class="abs cm-notes l" style="left:120px;top:300px;width:410px"><div class="cm-note" data-i="0" data-ui><i class="cm-x"><svg class="ic"><use href="#i-x"/></svg></i><p>GoGoX colours, but buzzword copy and nothing stands out.</p></div><div class="cm-note" data-i="1" data-ui><i class="cm-x"><svg class="ic"><use href="#i-x"/></svg></i><p>30+ features crammed on the home screen. Nothing comes first.</p></div><div class="cm-note" data-i="2" data-ui><i class="cm-x"><svg class="ic"><use href="#i-x"/></svg></i><p>14 fields before a price. Sizes in cm, no 6 ft rule, English only.</p></div><div class="cm-note" data-i="3" data-ui><i class="cm-x"><svg class="ic"><use href="#i-x"/></svg></i><p>No price until the end, then “final price may vary”.</p></div><div class="cm-note" data-i="4" data-ui><i class="cm-x"><svg class="ic"><use href="#i-x"/></svg></i><p>Upsell pop-ups at every step. It was told to grow basket size.</p></div></div>
+  <div class="abs cm-phone l" style="left:560px;top:300px"><div class="cm-host" data-app="ai"></div></div>
+  <div class="abs cm-vals" style="left:880px;top:300px;width:160px"><div class="cm-val" data-i="0" data-ui><svg class="ic"><use href="#i-star"/></svg><span>Taste</span></div><div class="cm-val" data-i="1" data-ui><svg class="ic"><use href="#i-target"/></svg><span>The right problem</span></div><div class="cm-val" data-i="2" data-ui><svg class="ic"><use href="#i-users"/></svg><span>Customer truth</span></div><div class="cm-val" data-i="3" data-ui><svg class="ic"><use href="#i-shield"/></svg><span>Accountability</span></div><div class="cm-val" data-i="4" data-ui><svg class="ic"><use href="#i-sliders"/></svg><span>Running the agents</span></div></div>
+  <div class="abs cm-ghost" style="left:1070px;top:300px"><div class="cg-ic"><i class="ai"><svg class="ic"><use href="#i-spark"/></svg></i><b>+</b><i class="hu"><svg class="ic"><use href="#i-user"/></svg></i></div><p>Same agents.<br>Now add a PM and a designer.</p></div>
+  <div class="abs cm-phone r" style="left:1070px;top:300px"><div class="cm-host" data-app="pmpd"></div></div>
+  <div class="abs cm-notes r" style="left:1390px;top:300px;width:410px"><div class="cm-note" data-i="0" data-ui><i class="cm-ok"><svg class="ic"><use href="#i-check"/></svg></i><p>Our real app: three clear services, 叫車, 速遞, 搬屋.</p></div><div class="cm-note" data-i="1" data-ui><i class="cm-ok"><svg class="ic"><use href="#i-check"/></svg></i><p>One job per screen: set the route, then 下一步.</p></div><div class="cm-note" data-i="2" data-ui><i class="cm-ok"><svg class="ic"><use href="#i-check"/></svg></i><p>Hong Kong’s fleet and units: courier to 9-tonne, sizes in 呎.</p></div><div class="cm-note" data-i="3" data-ui><i class="cm-ok"><svg class="ic"><use href="#i-check"/></svg></i><p>A price on every option, cargo cover tiers, $90 estimate first.</p></div><div class="cm-note" data-i="4" data-ui><i class="cm-ok"><svg class="ic"><use href="#i-check"/></svg></i><p>Tuned to completed orders: extras stay optional, no pop-ups.</p></div></div>
+  <div class="abs cm-cap l" style="left:560px;top:928px;width:290px">Fast to build. Hard to use.</div>
+  <div class="abs cm-cap r" style="left:1070px;top:928px;width:290px">Fast to build. Easy to trust.</div>
+</section>
+
+<!-- ================================================================
+     24 · CLOSE
+     ================================================================ -->
+<section class="slide dark" data-fx="close" data-title="Thank you"
+  data-notes="(0:30) So the shape of the job is changing. Humans set the goal. Agents do the legwork. Humans keep the judgment. Thank you.">
+  <div class="abs cl-lines" style="left:120px;top:230px;width:1300px">
+    <div class="cl-l"><i class="cl-dot gate"></i><span>Humans set the goal.</span></div>
+    <div class="cl-l"><i class="cl-dot ai"><svg class="ic"><use href="#i-spark"/></svg></i><span>Agents do the legwork.</span></div>
+    <div class="cl-l"><i class="cl-dot gate"></i><span>Humans keep the judgment.</span></div>
+  </div>
+  <div class="abs cl-thanks" style="left:120px;top:790px"><b>Thank you</b><span>Leslie Lai, Product Director, GoGoX</span></div>
+  <svg class="abs cl-x" viewBox="0 0 24.2 23.4" style="left:1460px;top:300px;width:260px;height:251px"><use href="#g-x" width="24.2" height="23.4"/></svg>
+  <svg class="ov" viewBox="0 0 1920 1080">
+    <path id="cl-road" class="road" d="M-60 1000 C 480 1000 760 900 1100 900 S 1450 770 1590 770"/>
+    <path class="road-dash cl-dash" d="M-60 1000 C 480 1000 760 900 1100 900 S 1450 770 1590 770"/>
+    <g class="t-pin t-end cl-end" data-on="cl-road" data-at="1"><g class="pin-in"><circle class="ring" r="20"/><circle class="pin-o" r="20"/><circle class="pin-f" r="9"/></g></g>
+    <use class="cl-van van" href="#g-van" width="80" height="50"/>
+  </svg>
+  <svg class="abs cl-logo" viewBox="0 0 135 24" style="right:120px;bottom:60px;width:170px;height:30px"><use href="#g-wordmark"/></svg>
+</section>
+
+<div class="lb" data-ui><figure><img alt=""><figcaption></figcaption></figure></div>
+
+<!-- ============ GLOBAL CHROME (inside the stage so it scales) ============ -->
+<div id="chrome">
+  <svg class="ch-logo" viewBox="0 0 135 24"><use href="#g-wordmark"/></svg>
+  <svg class="ch-route" viewBox="0 0 1920 80">
+    <path class="ch-base" d="M360 44 H 1560"/>
+    <path class="ch-done" d="M360 44 H 1560"/>
+    <g class="ch-stops"></g>
+    <g class="ch-van-g" transform="translate(360 44)"><use class="van" href="#g-van" x="-22" y="-26" width="44" height="28"/></g>
+  </svg>
+  <div class="ch-sec"></div>
+  <div class="ch-count"></div>
+</div>
+
+</div><!-- /stage -->
+
+<div id="notes" hidden><div class="nt-head"><b class="nt-title"></b><span class="nt-time">00:00</span></div><p class="nt-body"></p></div>
+<div id="menu" hidden><div class="mn-box"><div class="mn-h">Jump to a slide <span>G or Esc to close</span></div><div class="mn-list"></div></div></div>
+<div id="hint">Click or → to advance &nbsp; ← back &nbsp; T theme &nbsp; N notes &nbsp; G slides &nbsp; F fullscreen</div>
+</div><!-- /viewport -->
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/MotionPathPlugin.min.js"></script>
+<script src="vendor/DrawSVGPlugin.min.js"></script>
+<script src="slides.js"></script>
+<script src="design.js"></script>
+<script src="human.js"></script>
+<script src="compare.js"></script>
+<script src="research.js"></script>
+<script src="whatsapp.js"></script>
+<script src="career.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
